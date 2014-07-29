@@ -1,0 +1,1041 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass jsbook
+\begin_preamble
+\date{}
+\usepackage{url}
+\setlength{\textwidth}{\fullwidth}
+\setlength{\evensidemargin}{\oddsidemargin}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language japanese
+\language_package default
+\inputencoding utf8-platex
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement !tbh
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+VirtualBoxを用いた仮想マシンの構築
+\end_layout
+
+\begin_layout Author
+首都大学東京マイクロコンピュータ研究会
+\begin_inset Newline newline
+\end_inset
+
+nosada
+\end_layout
+
+\begin_layout Chapter
+はじめに
+\end_layout
+
+\begin_layout Section
+この文書について
+\end_layout
+
+\begin_layout Standard
+VirtualBoxを用いた仮想マシンの構築（以下``この文書''と表記）は、「Arch Linuxインストールガイド」
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+この文書が入っているディレクトリの中にあるALIG.pdfが該当する。
+\end_layout
+
+\end_inset
+
+に付随して、既存のOSをすり潰すこと無く新規にOSを試すために、Oracle VM VirtualBox
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.virtualbox.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+を使用して仮想のコンピュータを構築する手順を説明するものです。
+\end_layout
+
+\begin_layout Section
+前書き
+\end_layout
+
+\begin_layout Standard
+本来OSはコンピュータというハードウェアを動作させるために用いるものです。私達が普段使用しているパソコンにも、各々の用途、目的に最適化されたOSがすでに構築され
+ていると思います。せっかく今まで時間を掛けて構築してきた環境をOSインストールの為に潰してしまおうと考える人はおそらく皆無でしょう
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+もちろん既存環境をぶっ潰してやるという気概を持つ方がいても何一つおかしくない。しかしそのような方が求める知識はこの文書では扱っていない。
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+そこで、既存の環境の上に仮想のコンピュータを構築する仮想化ソフトウェアを使用して、いくらでもいじくり回してぶっ壊しても構わないコンピュータを作成することにしまし
+ょう。
+\end_layout
+
+\begin_layout Standard
+仮想化ソフトウェアにはOracle VM VirtualBox（以下VirtualBox）を使用します。
+\end_layout
+
+\begin_layout Standard
+以下では、VirtualBoxのインストールは既に済んでいるものとして話を進めていきます。また、以下に説明のために用いた画像はKDE 4.10
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+X window systemを使用するOSにおけるデスクトップ環境の一つ。筆者が好んで使っている。
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.kde.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+上のものですので、WindowsやOS X等でのものとはUIが異なる場合があります。その場合は適当に推察をしてそれらしい感じのものを選択してください。
+\end_layout
+
+\begin_layout Standard
+また、ここで構築するマシンを「仮想マシン」、VirtualBoxを動作させるマシンを「物理マシン」と呼称します。
+\end_layout
+
+\begin_layout Chapter
+仮想マシンの構築
+\end_layout
+
+\begin_layout Section
+仮想マシンの生成
+\end_layout
+
+\begin_layout Standard
+適当な方法でVirtualBoxを起動すると、``Oracle VM VirtualBox マネージャー''（図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "OracleVMVBoxManager"
+
+\end_inset
+
+）というウィンドウが立ち上がると思います（図中では既にマシンが存在していますが通常初回起動時はは何もない状態です）。ここで「新規」をクリックすると図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "BuildVM_NameAndOS_Default"
+
+\end_inset
+
+のようなウィンドウが新たに表示されます。ウィンドウ内のテキストボックスに適当な仮想マシンの名前を入力し、プルダウンメニューからOSの種類を選択します。今回はAr
+ch Linux x86_64(64ビット版）をインストールするので、図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "BuildVM_NameAndOS"
+
+\end_inset
+
+のように選択します。設定後は以下のようになります。これ以降、作成したマシンを指定する必要がある際は、ここで設定したマシンの名前(Dicke_Berta)を用いま
+す。仮想マシンの名前は任意に決めて頂いて構いません。``Dicke_Berta''は一例です。
+\end_layout
+
+\begin_layout Itemize
+名前：任意
+\end_layout
+
+\begin_layout Itemize
+タイプ：Linux
+\end_layout
+
+\begin_layout Itemize
+バージョン：Arch Linux(64 bit)
+\end_layout
+
+\begin_layout Standard
+設定後、「次へ」をクリックします。すると図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "BuildVM_MemSize"
+
+\end_inset
+
+のウィンドウが現れます。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_VBox/OracleVMVBoxManager1.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Oracle VM VirtualBox マネージャー
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "OracleVMVBoxManager"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_VBox/BuildVM_NameAndOS1.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+デフォルト
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset label
+LatexCommand label
+name "BuildVM_NameAndOS_Default"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_VBox/BuildVM_NameAndOS2.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+設定後
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "BuildVM_NameAndOS"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+仮想マシンの作成（コンピュータ名とOSの設定）
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+続いて、仮想マシンが使用するRAMのサイズを設定します。物理マシンに搭載されているRAMの量にもよりますが、おおよそ搭載メモリの
+\begin_inset Formula $1/4$
+\end_inset
+
+程度がよろしいでしょう。ここであまりに大量なメモリを設定すると物理マシン上の既存システムが不安定になります。また、ここで1GB未満のメモリを割り当てる設定をした
+場合、仮想マシン上で構築する環境によっては、不足するメモリ領域を仮想マシンが使用するディスク上の専用領域
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+これをスワップ領域という。
+\end_layout
+
+\end_inset
+
+で補う必要が出てきます。この結果動作速度の低下が見込まれますので、1GB以上のメモリ領域を割り当てることを推奨します。
+\end_layout
+
+\begin_layout Standard
+設定後、「次へ」をクリックし、図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "BuildVM_HardDrive"
+
+\end_inset
+
+のウィンドウへ移ります。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_VBox/BuildVM_MemSize.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+仮想マシンの作成（RAMサイズの設定）
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "BuildVM_MemSize"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+次に仮想マシンが使用するディスク（以下``仮想ディスク''）を設定します。今回は新規に仮想マシンを作成し、仮想マシンに用いるための既存の仮想ディスク（ハードドラ
+イブ）が存在しない状態ですので、ラジオボタン中から「仮想ハードドライブを作成する」を選択し、「作成」をクリックします。すると図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "BuildVHD_TypeOfHardDrive"
+
+\end_inset
+
+のウィンドウに遷移します。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_VBox/BuildVM_HardDrive.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+仮想マシンの作成（ディスクの設定）
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "BuildVM_HardDrive"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "BuildVHD_TypeOfHardDrive"
+
+\end_inset
+
+は仮想ディスクの形式を設定します。今回は仮想マシンをVirtualBox上のみでの運用としますので、画面の指示通り何もいじらず、デフォルトのVDI(Virtua
+lBox Disk Image)が選択されている状態で、「次へ」をクリックします。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_VBox/BuildVHD_TypeOfHardDrive.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+仮想ハードディスクの作成（ディスクタイプの設定）
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "BuildVHD_TypeOfHardDrive"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+続いて遷移する図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "BuildVHD_StorageOnVHD"
+
+\end_inset
+
+は、仮想ディスクのサイズ確保の設定です。今回は「可変サイズ」を選択します。設定後、「次へ」をクリックします。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_VBox/BuildVHD_StorageOnVHD.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+仮想ハードディスクの作成（ディスク上のストレージの設定）
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "BuildVHD_StorageOnVHD"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+最後に、図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "BuildVHD_LocationAndSize"
+
+\end_inset
+
+にて仮想ディスクのパスとサイズを設定します。パスは規定のパスで指定される場所以外のところに仮想ディスクを置きたい等の事情が無い限り、デフォルトで構いません。また
+仮想ディスクのサイズは任意です。構築したい環境にもよりますが、5GB程度もあれば良いでしょう。設定後、「作成」をクリックすると、仮想マシンが仮想ディスクとともに
+作成されます。VirtualBoxマネージャーが更新され、図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "OracleVMVBoxManager_Post"
+
+\end_inset
+
+のように、作成した仮想マシンが表示されます。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_VBox/BuildVHD_LocationAndSize.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+仮想ハードディスクの作成（ファイルの場所とサイズの設定）
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "BuildVHD_LocationAndSize"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_VBox/OracleVMVBoxManager2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+仮想マシンの生成完了（Oracle VM VirtualBox マネージャー）
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "OracleVMVBoxManager_Post"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+仮想マシンの設定
+\end_layout
+
+\begin_layout Standard
+前節で仮想マシンの生成が完了したので、次に仮想マシンの設定をしていくことにしましょう。仮想マシンの設定は、図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "OracleVMVBoxManager_Post"
+
+\end_inset
+
+のVirtualBoxマネージャー上で、設定を編集したい仮想マシンを選択し、「設定」をクリックすることで可能です。「設定」をクリックすると、図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "VM_Config"
+
+\end_inset
+
+のような設定ウィンドウが開きます。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_VBox/VM_Config.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+仮想マシン設定ウィンドウ
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "VM_Config"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+このウィンドウを用いて様々な設定が可能ですが、今回は起動デバイスの優先順序を変更するのみに留めたいと思います。OSのインストールを経験したことのある方はわかると
+思いますが、OSをインストールする場合、コンピュータ内蔵のHDDよりもOSのインストールメディア（DVDドライブやUSBメディアなど）を優先的に起動しないと、O
+Sのインストーラが立ち上がらず内蔵HDDからブートが始まるため、OSをインストールすることができません。
+\end_layout
+
+\begin_layout Standard
+もちろん、起動時の優先順序をこのように変更する必要があるのはOSインストール時だけであり、通常時はHDDをその他のデバイスよりも優先順序を上げておくほうが便利な
+点が多いことでしょう。
+\end_layout
+
+\begin_layout Standard
+ウィンドウ中の左にあるボックス内の項目から「システム」をクリックし、「マザーボード」タブを選択すると、図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "VM_Config_BootPriority"
+
+\end_inset
+
+のような状態になります。このうち、「起動順序」の項において、ボックス内のデバイスのうち「CD/DVD-ROM」をクリックし、直右に位置する矢印ボタンで起動順序を
+最上位に設定します。また、起動時に使用するデバイスは「CD/DVD-ROM」と「ハードディスク」のみですので、各デバイスの左に位置するチェックボックスにチェック
+が入っていない場合、チェックを入れてください。図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "VM_Config_BootPriority"
+
+\end_inset
+
+では「フロッピー」にもチェックが入っていますが、フロッピーディスクは今回使用しないので、チェックは任意です。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_VBox/VM_Config_BootPriority.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+仮想マシン設定ウィンドウ（「システム」内）
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "VM_Config_BootPriority"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+仮想マシンの運用
+\end_layout
+
+\begin_layout Standard
+以上までで作成した仮想マシンを早速運用してみましょう。
+\end_layout
+
+\begin_layout Standard
+今回は、Arch Linuxのインストールイメージを使用し、仮想マシン上へArch Linuxをインストールする、という状況を想定して説明をしていきます。
+\end_layout
+
+\begin_layout Standard
+ここで、Arch Linuxのインストールイメージは何らかの方法で既に物理マシンのディスク上に保存してあるものとします。
+\end_layout
+
+\begin_layout Standard
+まずVirtualBoxを起動し、以上までで作成した仮想マシンを選択して「設定」をクリックし、ウィンドウ中の左にあるボックス内の項目からストレージを選択します（
+図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "VMStorage_Storage"
+
+\end_inset
+
+）。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_VBox/VM_Config_Storage_Setting.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+仮想マシン設定ウィンドウ（「ストレージ」内）
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "VMStorage_Storage"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+今回設定するのは、「ストレージツリー」中の「コントローラー：IDE」です。図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "VMStorage_Storage"
+
+\end_inset
+
+のようにCDのアイコンが表示される欄がない場合は、「コントローラー：IDE」を選択し、ストレージツリーのボックス下部にある4種のアイコンのうち、最左のものをクリ
+ックし、「CD/DVDデバイスを追加」から「空のディスク」を選択します。続いて、「属性」中のCDのアイコンをクリックし、「仮想CD/DVDディスクファイルの選択
+」を選び、先ほど保存したArch Linuxイメージを選択します。
+\end_layout
+
+\begin_layout Standard
+設定し終えたら「OK」をクリックし、設定ウィンドウを閉じます。
+\end_layout
+
+\begin_layout Standard
+VirtualBoxマネージャを確認すると、図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "OracleVMVBoxManager_IM"
+
+\end_inset
+
+のように、「ストレージ」内のIDEセカンダリマスターに、先程選択したArch Linuxのイメージファイルが設定されているはずです。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_VBox/OracleVMVBoxManager3.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+インストールイメージの設定結果（Oracle VM VirtualBox マネージャー）
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "OracleVMVBoxManager_IM"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+あとは「起動」ボタンをクリックすれば、仮想マシンに電源が投入され、おなじみのブートシーケンスが別のウィンドウ内で開始されます。システムがブートする間、注意事項を
+記すウィンドウが何度か立ち上がってきますが、内容をよく読んでから「OK」をクリックしてスルーします。何も考えずにスルーしても構わないのですが、たまに仮想マシンに
+マウスの制御を取り込まれてどうしようもならなくなる時があります。その場合、仮想マシンのウィンドウ右下に表示されているキーを押下するとマウスの制御が実機に復帰しま
+す。図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Choose_OS_syslinux"
+
+\end_inset
+
+では右Ctrlキーが該当します。何がなんだかわからなくなってパニックにならないように気をつけましょう。
+\end_layout
+
+\begin_layout Standard
+さて、順調に起動処理が進むと、図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Choose_OS_syslinux"
+
+\end_inset
+
+のような画面が表示されます。これはブートローダがOSをブートする過程で、起動するOSをユーザが選択するフェーズです。今回仮想マシンにインストールするのは64ビッ
+ト版のArch Linuxですので、``Boot Arch Linux (x86_64)''を選択し、Enterキーを押下します。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_ArchLinux/syslinux.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+起動するOSを選択する（ブートローダ）
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Choose_OS_syslinux"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+以後のArch Linuxインストールの詳細は、別途「Arch Linuxインストールガイド」をご参照下さい。
+\end_layout
+
+\begin_layout Standard
+OSインストール終了後は、起動デバイスの優先順序を変更するのをお忘れなく。
+\end_layout
+
+\end_body
+\end_document

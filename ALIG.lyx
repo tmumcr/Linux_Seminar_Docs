@@ -1,0 +1,8878 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass jsbook
+\begin_preamble
+\date{}
+\usepackage{url}
+\setlength{\textwidth}{\fullwidth}
+\setlength{\evensidemargin}{\oddsidemargin}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language japanese
+\language_package default
+\inputencoding utf8-platex
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command makeindex
+\float_placement !tbh
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_title "Arch Linuxインストールガイド"
+\pdf_author "nosada"
+\pdf_subject "GNU/Linuxの紹介、Arch Linuxの導入の案内"
+\pdf_keywords "GNU/Linux, Linux, Arch Linux"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Arch Linuxインストールガイド
+\end_layout
+
+\begin_layout Author
+首都大学東京マイクロコンピュータ研究会
+\begin_inset Newline newline
+\end_inset
+
+nosada
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+はじめに
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:はじめに"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+概要
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:概要"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+「Arch Linuxインストールガイド」（以下「この文書」と表記）は、首都大学東京マイクロコンピュータ研究会（以下マイコン研）の一企画であるマイコン研Linu
+xゼミ（以下「本ゼミ」と表記）で使用するために作成されたものです。
+\end_layout
+
+\begin_layout Standard
+本ゼミの目標は以下のとおりです。
+\end_layout
+
+\begin_layout Itemize
+Linuxとは何たるかを知り、GNU/Linuxについての知識を身に着ける
+\end_layout
+
+\begin_layout Itemize
+実際にArch Linuxを導入してGNU/Linux
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Linux自体はOSではない。一般に``Linux''と呼ばれるOSの実体はGNU/Linuxと呼ばれるシステムである。この話題については第
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Linuxとは？"
+
+\end_inset
+
+章で扱う。
+\end_layout
+
+\end_inset
+
+を使用してみる
+\end_layout
+
+\begin_layout Itemize
+導入したArch Linuxをデスクトップ用OSとしてセットアップし、デスクトップ用OSとして通常用途に使用できるようにする
+\end_layout
+
+\begin_layout Itemize
+自由かつ無料なOSを通じてコンピュータを眺め、新たな価値観を手にする。
+\end_layout
+
+\begin_layout Standard
+本ゼミではこれらの目標を達成するために、まずGNU/Linuxに至るまでのOSの歴史を概説し（第
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Linuxとは？"
+
+\end_inset
+
+章）、続いてArch Linuxをインストール、セットアップし（第
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Arch-Linuxのインストール"
+
+\end_inset
+
+章）、デスクトップOSとして実用に耐えうるであろうと思われる程度までパッケージの追加、設定を行う（第
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Arch-Linuxを使用する"
+
+\end_inset
+
+章）ことを目的としています。この文書は以上の目的を達成するために、その内容及び方法、要する知識などを示すものです。
+\end_layout
+
+\begin_layout Standard
+この文書内における各章の役割は以下のとおりです。
+\end_layout
+
+\begin_layout Itemize
+第
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:はじめに"
+
+\end_inset
+
+章：はじめに
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+本ゼミの内容及びこの文書の概要と動作環境を示します。
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+第
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Linuxとは？"
+
+\end_inset
+
+章：Linuxとは？
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+GNU/Linuxを使用する前に、LinuxおよびGNU/Linuxについての説明を与えます。
+\begin_inset Newline newline
+\end_inset
+
+なおこの章は本ゼミの主目標であるArch Linuxのインストールには直接は関係しませんので、読み飛ばしても結構です。
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+第
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Arch-Linuxのインストール"
+
+\end_inset
+
+章：Arch Linuxのインストール
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+LinuxディストリビューションのひとつであるArch Linuxについての説明を与え、そのインストールイメージの入手、インストール、インストール後に必要な設定
+などについての説明を与えます。
+\begin_inset Newline newline
+\end_inset
+
+インストールに必要となるUnixコマンドやツール等の説明もこの章で行います。
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+第
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Arch-Linuxを使用する"
+
+\end_inset
+
+章：Arch Linuxを使用する
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Arch Linuxをデスクトップ用途に使用するための各種ソフトウェアのインストールや設定などを行います。
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+なお、仮想マシンを利用してGNU/Linuxをインストールする際には、別途「VirtualBoxを用いた仮想マシンの構築」
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+この文書が入っているディレクトリの中にあるVBoxGuide.pdfが該当する。
+\end_layout
+
+\end_inset
+
+をご参照下さい。
+\end_layout
+
+\begin_layout Section
+環境
+\end_layout
+
+\begin_layout Standard
+前述の通り、本ゼミではLinuxディストリビューションとしてArch Linux
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.archlinux.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+を使用します。
+\end_layout
+
+\begin_layout Standard
+本ゼミの参加者の推奨環境は表
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "推奨環境"
+
+\end_inset
+
+の通りとなります。現在通常の手段で手に入るPCであれば、おそらくこの環境を満たしているはずです。仮想マシンを利用せずに実機へのインストールを行う場合ならば、推奨
+環境よりも低い性能のマシンでも動作は可能でしょう。もちろんその場合、CPUも64ビットアーキテクチャであることを要求されませんが、この文書ではGNU/Linux
+を導入するマシンのCPUは64ビットアーキテクチャであることを想定しています。また、仮想化環境を使用しない場合、勿論インストール対象のPCに搭載されているCPU
+が仮想化に対応している必要はありません。
+\end_layout
+
+\begin_layout Standard
+参考までに、筆者の環境は表
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "筆者の環境"
+
+\end_inset
+
+の通りです。この環境下での動作を確認しましたし、現在もしています。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+動作環境
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+推奨環境
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "推奨環境"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+OS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+仮想化環境を使用する場合、それが動作するもの
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CPU
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+仮想化対応製品かつ64ビットアーキテクチャ(x86_64、x64、amd64)のもの
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RAM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+可能な限りたくさん(2GB以上あれば十二分）
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ディスク
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+可能な限りたくさん（空き容量が10GB以上あれば十二分）
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+筆者の環境
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "筆者の環境"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+OS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Arch Linux
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CPU
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Intel
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textregistered~
+\end_layout
+
+\end_inset
+
+Core
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttrademark~
+\end_layout
+
+\end_inset
+
+2 Duo P8700 2.53GHz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RAM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8GB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ディスク
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+60GB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+文書生成環境
+\end_layout
+
+\begin_layout Standard
+この文章は以下の環境で作成されました。以下に示すソフトウェアは、全て無料で入手、使用できます。詳細は各ソフトウェアに関するライセンスをご参照下さい。
+\end_layout
+
+\begin_layout Itemize
+ワードプロセッサソフト
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+LyX
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.lyx.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+  version 2.1.0
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+組版ソフトウェア
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+TeXLive 2013
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.tug.org/texlive/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ version 3.1415926-p3.4-110825-2.6(pTeX)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+フォント
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+梅フォント
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://sourceforge.jp/projects/ume-font/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 梅明朝S3(ume-tms3.ttf)及び梅ゴシックS5(ume-tgs5.ttf)
+\end_layout
+
+\end_deeper
+\begin_layout Chapter
+Linuxとは？
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Linuxとは？"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+第
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:はじめに"
+
+\end_inset
+
+章において、なんの説明も加えることなく、「Linuxディストリビューション」という言葉を利用しました。Arch Linuxとは数あるLinuxディストリビューシ
+ョンの一つです。そしてLinuxディストリビューションはOSを指すものではありません。ではこの「Linuxディストリビューション」の意味するものは何でしょうか。
+\end_layout
+
+\begin_layout Standard
+また、Linuxディストリビューションは数あれど、``Linux''というソフトウェアは``Linux''のみです。ではLinuxとは一体何でしょうか。Linu
+xは一般にOSであるかのように扱われていますが、実はOSではありません。一般にOSとしてLinuxと呼称するとき、その実体はGNU/Linuxと呼ばれるシステム
+を指します。LinuxとはOSを構成する部品の一つであるカーネルと呼ばれるものです。ではカーネルとは何でしょうか。そもそもOSとは何でしょうか。
+\end_layout
+
+\begin_layout Standard
+本章では、これらの疑問に対し説明を与えることを目的とします。
+\end_layout
+
+\begin_layout Section
+OS
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:OS"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+OS(Operating System)
+\series default
+は、ハードウェアを管理し操作するためのソフトウェアです。OSはハードウェア、即ちコンピュータの五大装置と称される演算装置、制御装置、記憶装置、入力装置、出力装置
+すべてを効率よく管理し、またその機能を便利に扱えるようにすることが期待されます。これらを達成するために、OSはハードウェアの管理だけでなく、ソフトウェア
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+ソフトウェアという概念は動作する場所（システム側かユーザ側か）や用途によって分類されることがあるが、ここでは分類せず混同して扱う。
+\end_layout
+
+\end_inset
+
+API(application programming interface)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+ソフトウェアから呼び出し可能な機能を定義し、提供するもの
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LSP"
+
+\end_inset
+
+。ソフトウェアにおいてソースコードの側から利用される関数等がそれで、Cでいう
+\family typewriter
+printf
+\family default
+や
+\family typewriter
+scanf
+\family default
+等の定義がAPIにあたる。
+\end_layout
+
+\end_inset
+
+やABI(application binary interface)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+ソフトウェアがソフトウェア自身やOS、ライブラリと何らかの情報をやりとりする際に使用する方法を定義するもの
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LSP"
+
+\end_inset
+
+。APIの例を用いれば、
+\family typewriter
+printf
+\family default
+や
+\family typewriter
+scanf
+\family default
+が実行された際にどのような動作をするか、またさせられるかという事柄の定義がABIとなる。
+\end_layout
+
+\end_inset
+
+の整備、またOS上で動作するプロセス
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+一般に実行中のプログラムを指す。
+\end_layout
+
+\end_inset
+
+の管理全般等、コンピュータをハードウェアの方面からもソフトウェアの方面からも管轄する大規模なソフトウェアとなっています。ざっくばらんにいえば、ソフトウェアを動作
+させるための基盤、縁の下の力持ちということになるでしょう
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+OSの厳密な説明は大変厄介で、このようなモヤっとした説明でお茶を濁すしか無い（筆者の浅学が原因でもある）。厳密な知識を求める場合は
+\begin_inset CommandInset citation
+LatexCommand cite
+key "OS"
+
+\end_inset
+
+などを参照することが望ましい。
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Section
+カーネル
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:OS"
+
+\end_inset
+
+で、OSはハードウェアを管理し操作するソフトウェアだと説明しましたが、これは詳しく見ると実は誤りです。確かにOSはハードウェアを管理し操作するのですが、実際には
+OS内部に存在する
+\series bold
+カーネル(kernel)
+\series default
+がその役割を担っています。カーネルはOSの中核たる存在であり、通常はOSを構成する部品の一つです。カーネルはOSによってシステム起動時に真っ先に（つまり一番目に
+）起動されるプログラムであり、
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:OS"
+
+\end_inset
+
+で取り上げたOSの役割のうちのほとんどを担当します。つまりその具体的な役目は、ハードウェア全般の管理、ソフトウェアのお世話、コンピュータ資源（メモリ、ストレージ
+、あるいは実行中のプロセス等）の効率的な運用が挙げられます。
+\end_layout
+
+\begin_layout Section
+Linuxカーネル
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Linuxカーネル(Linux kernel)
+\series default
+は1991年、当時ヘルシンキ大学（フィンランド）の学生であったリーナス・トーバルズ（Linus Benedict Torvalds）によって書かれたプログラムか
+ら誕生しました。
+\end_layout
+
+\begin_layout Standard
+Linuxの歴史を紐解くには、UnixというOSとGNUプロジェクトについての知識が必要になります。よって、この節ではUnixとGNUの歴史も併せて振り返ること
+にします。
+\end_layout
+
+\begin_layout Subsection
+Unix
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Unix
+\series default
+（商標上は``UNIX''が正しい
+\begin_inset CommandInset citation
+LatexCommand cite
+key "UNIX"
+
+\end_inset
+
+）とは、1969年に、当時AT&T
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+American Telephone and Telegraph Company、電話を発明したグラハム・ベル(Alexander Graham
+ Bell)が電話の特許を保持するために1874年に設立した権利団体を前身とする企業（
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://en.wikipedia.org/wiki/AT&T_Corporation
+\end_layout
+
+\end_inset
+
+より）。
+\end_layout
+
+\end_inset
+
+に属していたベル研究所
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+アメリカにある研究機関。トランジスタもC言語もこの研究所から誕生した。
+\end_layout
+
+\end_inset
+
+の研究員であったケン・トンプソン(Kenneth Lane Thompson)、デニス・リッチー(Dennis MacAlistair Ritchie)らによっ
+て開発されたOSです。Unixは最初アセンブリ言語で記述されており
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+当時はシステム開発に使えるような高級言語が存在せず、ハードウェアに密接に関わる泥臭い言語でプログラムを作成する必要があった。現在もハードウェアに密接に関わる部分
+ではアセンブリ言語が生きているが、その量は当時よりも明らかに少ない（はず）。
+\end_layout
+
+\end_inset
+
+、お世辞にも扱いやすいとは言えないものでしたが、後に高級言語
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+プログラミング言語のうち、より自然言語（人間が用いる言語体系）に近いものを高級言語といい、より機械語（コンピュータが用いる記号列の体系）に近いものを低級言語とい
+う。
+\end_layout
+
+\end_inset
+
+であるC言語で記述し直され、より扱いやすく、またUnix開発者が想定したハードウェア以外のハードウェアへ移植することも容易なプログラムになりました。
+\end_layout
+
+\begin_layout Standard
+UnixはAT&T傘下のベル研究所で開発されたものであり、通常ではUnixについての権利はすべてベル研究所、ひいてはAT&Tが持つものですが、AT&Tは当時法的
+制限によりコンピュータ関連の事業への参入が禁じられており、加えて保有する電話関連以外の技術は独占を禁じられていました
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LINUX"
+
+\end_inset
+
+。これにより、AT&Tは希望する者全てにUnixのソースコードを無償で提供することとなり、自由なソフトウェアとなりました。結果、開発者の手を離れて多数の大学や企
+業に渡り、多くの改善や改良を加えられることで、次第に成長していくこととなります。しかし、電話事業を独占していたAT&Tは1984年に事業の分割を余儀なくされ、こ
+れによりベル研究所はAT&Tの手を離れ別の企業の傘下に加わります。この事業の再分割の結果、AT&Tはコンピュータ関連の事業への参入が再び認められるようになりまし
+た。Unixを自由の身にしていたのはAT&Tに課せられた法的制限によるものです。いまやAT&Tにはその法的制限はなく、無償で配布する道理はありません。なぜならA
+T&Tは利益を求める企業であり、Unixは既に市場を形成している、魅力的な商品であるからです。この結果、AT&TはUnixの無償配布をやめ、商用Unixとして、
+Unixを自社の商品としたのでした。
+\end_layout
+
+\begin_layout Standard
+今まで無償で提供されてきたUnixが有償となる、これはUnixの利用者にしてみれば大問題です。今までタダで使えたものがいきなり有料になったら誰だってびっくりしま
+すよね。一回ググるたびにGoogleから5円請求されるようになればおそらく文明社会に生きている人達はびっくり仰天するでしょう。規模は違えど、Unix有料化はUn
+ixに親しんだ人達を仰天させたことでしょう。結果、Unixの利用者は、AT&Tが販売する商用Unixと互換性を持つOSを開発することになります。これが
+\series bold
+Unix互換
+\series default
+のOSといわれるものになります。LinuxもUnix互換のOSであると言われますが、その成り立ちはUnixとは異なります。
+\end_layout
+
+\begin_layout Subsection
+BSD
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+BSD(Berkeley software distribution)
+\series default
+とは、アメリカ、カリフォルニア大学バークレー校(University of California, Berkeley : UCB)のcomputer
+ system research group(CSRG)が、1977年から1995年まで開発、配布していたソフトウェア群とOSを指します
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BSD"
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+BSD
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+以下では特に断りのない限りBSDをOSの名称として使用する。
+\end_layout
+
+\end_inset
+
+は当時はまだ無償で配布されていたベル研究所のUnixを元に開発されたOSで、BSD Unixと呼ばれた正真正銘のUnixでした。1984年のAT&Tの事業再編ま
+ではBSDは自由に公開されており、ベル研究所のUnixと同様多数の大学や企業で使用されていましたが、ベル研究所のAT&Tからの分離以降、BSDはライセンスの問題
+で自由に公開することが不可能になりました。このため、CSRGはAT&Tのライセンスが関わってくるAT&T由来のコードをBSDから削り、必要な部分を書き足し、AT
+&Tのライセンスに抵触しないUnix互換のOSとしてBSDを開発することにしました(4.3BSD Net/2)。この4.3BSD/Net2を元に、1985年に出現し
+た32ビットCPUであるIntel 80386での動作を目的とした386BSDがウィリアム・ジョリッツ(William Frederick (Bill)
+ Jolitz)とリン・ジョリッツ(Lynne Greer Jolitz)により開発されましたが、この公開は1992年でした。というのも、4.3BSDはこの時点で
+はOSとしては不十分であり、完全に動作するものではなく、386BSDはこの不完全なOSを完全に動作させるべく作業を続けた成果であるためです。
+\end_layout
+
+\begin_layout Standard
+ですが、386BSDの大元である4.3BSD/Net 2が、AT&Tにライセンス違反で提訴され、BSD自体の開発がストップしてしまいます。この結果、386BSDも
+公開停止を余儀なくされてしまいます。裁判がCSRGとAT&Tとの和解に終わり、ようやくライセンス的に問題のない4.4BSDが公開されたのは1994年のことでした。
+\end_layout
+
+\begin_layout Subsection
+GNUプロジェクト
+\end_layout
+
+\begin_layout Standard
+1983年、リチャード・ストールマン(Richard Matthew Stallman)は
+\series bold
+GNUプロジェクト
+\series default
+を設立しました
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GNU"
+
+\end_inset
+
+。GNUプロジェクトとは、100% 自由ソフトウェアのUnix互換のシステム(GNU)を提供することを目標とするプロジェクトです
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GOS"
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+GNUは``GNU is Not Unix.''の頭文字をとったもの（再帰的頭字語といわれる）。
+\end_layout
+
+\end_inset
+
+。自由ソフトウェアというのは、ソフトウェアの利用者がそのソフトウェアを、ソフトウェア開発者に告知することなく実行、コピー、配布、研究、変更、そして改良する自由を
+有することを認めるライセンスを持つソフトウェアをいいます
+\begin_inset CommandInset citation
+LatexCommand cite
+key "DoFS"
+
+\end_inset
+
+。ここで自由ソフトウェアは商用目的を禁止しているわけではありません。つまり、GNUプロジェクトは、かつてAT&T傘下のベル研究所がそうであったように、誰でも自由
+に利用できるUnixの環境を取り戻そうとするためのプロジェクトだったのです。続く1985年、リチャード・ストールマンはGNU宣言を発表し
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+原文が
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.gnu.org/gnu/manifesto.html
+\end_layout
+
+\end_inset
+
+で読める（英語）。
+\end_layout
+
+\end_inset
+
+、GNUプロジェクトの理念を明文化し、それに対する支援と参加を求めました。同年10月、彼は自由ソフトウェアを推進し、逆に不自由なソフトウェアに反対するために、非
+営利団体の
+\series bold
+フリーソフトウェア財団(free software foundation, FSF)
+\series default
+を設立し、自由ソフトウェアを強力に推進していくこととなります。
+\end_layout
+
+\begin_layout Standard
+GNUプロジェクトは次々と素晴らしい成果を成し遂げていきました。この業界をVimと二分するほどに有名なエディタであるEmacsやコンパイラのGCC、PGP(Pr
+etty Good Privacy)から派生した暗号化ソフトウェアであるGPGなどがそれにあたります。ですが、GNUプロジェクトはその目的であるUnix互換のO
+SであるGNUを完成させることはありませんでした。OSに必要なAPI、ABI、コンパイラ、アセンブラ、リンカなどは既に完成していたのですが、OSの最後のピースを
+埋めるデバイスドライバやデーモン、そしてカーネルが完成していなかったのです
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+2001年にGNUプロジェクトはGNU Hurdというカーネルを完成させたが、このカーネルは現在（2013年8月）に至るまでに実用的なレベルまでには成熟していな
+い。
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.gnu.org/software/hurd/hurd.html
+\end_layout
+
+\end_inset
+
+を参照。
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Subsection
+LinuxとGNU/Linux
+\end_layout
+
+\begin_layout Standard
+1987年、MinixというUnix互換のOSがオランダ、アムステルダム自由大学(Vrije Universiteit Amsterdam（オランダ語）)のアン
+ドリュー・タネンバウム教授(Andrew Stuart Tanenbaum)によって開発されました
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MINIX"
+
+\end_inset
+
+。Minixはタネンバウム教授が計算機科学の教育に使用するために開発したもので、AT&Tのライセンスに抵触しないシンプルなUnix互換OSでした。
+\end_layout
+
+\begin_layout Standard
+「Minixはあくまで教育用のホビーであり、実用が目的ではない」
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MINIX"
+
+\end_inset
+
+というタネンバウム教授の方針のもとで、Minixはクローズドソース
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+プログラムのソースコードを公開しないこと。このようなソフトウェアをクローズドソースソフトウェアといい、逆にプログラムのソースコードを公開するソフトウェアをオープ
+ンソースソフトウェアという。
+\end_layout
+
+\end_inset
+
+で配布されていましたが、Minixを実用的なOSにしたいと願う人々もユーザの中にはいました。リーナス・トーバルズ（以下リーナス）もその一人でした。
+\end_layout
+
+\begin_layout Standard
+リーナスは、既存のUnixとUnix互換OSに不満を抱いていました。Unixは高価で学生身分の彼がおいそれと買えるものではなく、またUnix互換OSも、特に彼が
+使用していたMinixは教育目的に使用が制限されているうえに、その目的によってOS自身の機能が大幅に簡略化されており、彼が満足するようなOSではありませんでした
+。そこで、彼は自らの手でOSをつくり上げることにしたのです。1991年のことでした。
+\end_layout
+
+\begin_layout Standard
+1991年8月25日
+\begin_inset CommandInset citation
+LatexCommand cite
+key "HOL"
+
+\end_inset
+
+、リーナスはMinixのユーザネットワークに、「僕は今、 UNIX 互換の OS を作っている」
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LST"
+
+\end_inset
+
+というメッセージを投稿しました。さらに、そのOSは自由ソフトウェアであり、いかなるMinixのコードも使用していない
+\begin_inset CommandInset citation
+LatexCommand cite
+key "HOL"
+
+\end_inset
+
+と付け加えました。彼の作ったUnix互換のOSこそが、後のLinuxカーネルでした。
+\end_layout
+
+\begin_layout Standard
+リーナスの作成したカーネルは、当時の既存のUnixシステムに比べ、その機能と実績においてとても比べられるようなものではありませんでした。ですが、既存のUnixシ
+ステムは自由ソフトウェアではないので自由に公開、再配布が不可能であり、また自由なソフトウェアを目指したBSDは訴訟問題に追われ、GNUプロジェクトはGNU
+ Hurdの開発が難航していたことでOS開発は途上の段階でした。
+\end_layout
+
+\begin_layout Standard
+つまり、1990年代初頭に存在したUnix互換のOSとして使えそうなものは、リーナスの開発したLinuxカーネル以外を置いて他になかったのです。
+\end_layout
+
+\begin_layout Standard
+リーナスはLinuxをGPLライセンス
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+自由ソフトウェアに付加するライセンスのうちの一つ。自由ソフトウェアとして実行、コピー、配布、研究、変更、そして改良する自由を有することを認めるが、GPLライセン
+スを持つソフトウェアを、あるいはそこから派生したソフトウェアを再配布する場合は、元のソフトウェアと同一のGPLライセンスに限るというもの。
+\end_layout
+
+\end_inset
+
+の元に公開することを決定し、多数の開発者とともにLinuxカーネルの改良にとりかかりました。LinuxはあくまでOSのカーネルであり、カーネルのみではOSとして
+成立させることはできません。Linuxを自由ソフトウェアのOSとして完成させるための大量の穴は、GNUプロジェクトがUnix互換OSであるGNUを作るべく開発し
+ていたソフトウェア群が埋めてくれました。これはGNUプロジェクトがGNUを作ろうとして完成に至っていなかったカーネルという最後のピースを、Linuxが埋めること
+を意味していました。
+\end_layout
+
+\begin_layout Standard
+かくして、LinuxカーネルとGNUプロジェクトのコンポーネントを組み合わせたOSである、GNU/Linux
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+LinuxはOSのカーネルの名前であり、Linuxカーネルを使用しGNUのコンポーネントを使用しているOS（これは既存の``Linux''として知られるOSのほ
+ぼすべてが該当する）は``GNU/Linux''と呼称すべきだとGNUプロジェクトは主張している（
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.gnu.org/gnu/linux-and-gnu.html
+\end_layout
+
+\end_inset
+
+などを参照）。この文章でも、既に第
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:はじめに"
+
+\end_inset
+
+章でみられるが、この主張に従い、LinuxカーネルとGNUのコンポーネントを使用したOSを``GNU/Linux''と呼称する。Linuxカーネルを指す場合は呼
+称として``Linux''及び``Linuxカーネル''の両者を適宜使う。
+\end_layout
+
+\end_inset
+
+が誕生したのです。
+\end_layout
+
+\begin_layout Section
+Linuxディストリビューション
+\end_layout
+
+\begin_layout Standard
+LinuxはOSのカーネルです。LinuxカーネルとGNUのコンポーネントを組み合わせて、GNU/Linuxと呼ばれるOSシステムが出来上がります。このようにし
+て成立するOSは確かにOSではありますが、私達が普段利用するOSとしては機能不十分です。考えてみればわかりますが、GNU/LinuxはOSとしては完結しています
+が、OS上で動かすアプリケーションソフトウェアについてはあまり触れられていません。これは即ち、ブラウザもメーラも、果てはテキストエディタといった、普段私達が使っ
+ているようなソフトウェアはGNU/Linuxには含まれていません。更にいえば、GUIもGNU/Linuxには含まれていません。LinuxカーネルとGNUのコンポ
+ーネント
+\series bold
+のみ
+\series default
+からなる純粋なGNU/Linuxを起動した場合、おそらく真っ黒の画面にプロンプトが明滅するインターフェイスが出現し
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+このように文字だけを介するUI（ユーザインターフェース、User Interface）をCUI(Character UI)という。対してマウスカーソルがあってウ
+ィンドウがあってというように、図形的要素を介するUIをGUI(Graphical UI)という。CUIの名誉のために言っておくと、CUIにもブラウザやメーラ、テ
+キストエディタはある。CUIでもEmacsを使えば大抵のことはできる、と言われる。Emacsについては
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.gnu.org/software/emacs/
+\end_layout
+
+\end_inset
+
+を参照。
+\end_layout
+
+\end_inset
+
+、用途が非常に限定的な環境が得られるでしょう。このようなデスクトップ用途以外にも、サーバ用途として使う場合、クライアントとの通信の為のソフトウェアやアクセス管理
+のためのソフトウェア、セキュアな環境を構築するための各種ツール、さらにはサーバが提供するコンテンツのためのプログラムと動作環境など、足りないものは山程あります。
+\end_layout
+
+\begin_layout Standard
+そこで、LinuxカーネルとGNUのコンポーネントに加え、利用者がおそらく使うであろうブラウザやメーラ、テキストエディタといった各種アプリケーションソフトウェア
+を一緒くたにして（バンドルして）配布すると大変便利でしょう。このように、GNU/Linuxと各種のアプリケーションソフトウェアをバンドルして配布されているものを
+\series bold
+Linuxディストリビューション
+\series default
+といいます。LinuxディストリビューションはOSではありません。GNU/Linuxを要素として含む、ソフトウェアの頒布形態です。例えば一戸建ての家を買うとき、
+家は土地に付随して販売されます。家は不動産としての資産価値がありますが、その資産価値は住宅と土地を合わせたものであるはずです。Linuxディストリビューションを
+不動産とすれば、GNU/Linuxは土地に該当します。
+\end_layout
+
+\begin_layout Standard
+Linuxディストリビューションには様々な種類があります。駅前徒歩5分の一戸建てのような便利なものから、郊外の広い一軒家のようなのびのびと使えるもの、はたまた土
+地だけ与えられて自分で家を作らされるようなものもあります。興味のある方は
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LD"
+
+\end_inset
+
+をご参照ください。
+\end_layout
+
+\begin_layout Standard
+ちなみに、今回使用するArch Linuxは、残念ながら土地だけ与えられて自分で家を作らされる類のLinuxディストリビューションです。ですが、Arch
+ Linuxは既に整地された土地に、手配済みの資材を用いて家を作り上げるような形態ですので、少しは気が楽です。というのは、世の中には荒れ地を自分の手で開墾し、資
+材も自分で手配することを要求するようなLinuxディストリビューション
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.gentoo.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+も存在するのです。
+\end_layout
+
+\begin_layout Chapter
+Arch Linuxのインストール
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Arch-Linuxのインストール"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Arch Linuxをマシンへインストールし、OSSシステムを動作させる機械としてコンピュータを覚醒させます。本ゼミ及びこの文書の中心となる内容です。
+\end_layout
+
+\begin_layout Section
+Arch Linuxについて
+\end_layout
+
+\begin_layout Standard
+Arch Linuxは、2001年にカナダ人プログラマであるジャッド・ビネット(Judd Vinet)により公開され、現在はアメリカ人プログラマであるアーロン・
+グリフィン(Aaron Griffin)を筆頭に開発を続けているLinuxディストリビューションです
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AL"
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+Arch Linuxは、既存のどのLinuxディストリビューションにも依存しない
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+例えばUbuntuはDebianから派生し、FedoraはRHELの開発版的位置付けである。同じくCentOSはRHELが公開しているソースコードを元に開発され
+たものである。このように、既存のディストリ（Linuxディストリビューション）から派生し、あるいは関連して新たなディストリが発生することも多い。
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+このような方針をとるディストリは他にGentoo、Slackwareがあるが、いずれも荒野を開墾していく系のディストリである。独自の方針をとるディストリは並べて
+どうも泥遊びが好きらしい。
+\end_layout
+
+\end_inset
+
+Linuxディストリビューションとして発展してきました。Arch Linuxは、簡潔性、最小性、およびコード緻密性と正確さ(elegance)に焦点を当てて開発
+されており、このため通常多くのLinuxディストリビューションには大抵付属するGUIによるOSのインストーラが付属していません。また、インストール直後のシステム
+に含まれるパッケージ
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+システムにインストールするプログラム群の最小単位。インストールするプログラム自身と、パッケージの管理のために使用するメタデータを含んでいる。
+\end_layout
+
+\end_inset
+
+の数は同種のLinuxディストリに比べてかなり少なくなっています。これは、お仕着せの環境に縛られず、自分の好きな環境を好きに構成できることを意味し、自由度の高い
+ものと言えるでしょう。
+\end_layout
+
+\begin_layout Standard
+また、Arch LinuxはOS自体に特定のバージョンを定めないローリングリリースというリリース方式を採用しており、システムを常に現状の最新バージョンに保つこと
+ができるという利点を持ちます。反面、迂闊にアップデートを行うとシステムが壊れるという危険性も孕んでいますが、問題の解決策はArchWiki
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.archlinux.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+やArch Linux Forum
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://bbs.archlinux.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+で入手することができます。ArchWikiは膨大な項目数を誇る良質なドキュメントです。困ったときはArchWikiを読むと良いでしょう。
+\end_layout
+
+\begin_layout Section
+Arch Linuxイメージの入手
+\end_layout
+
+\begin_layout Standard
+Arch LinuxをインストールするにはArch Linuxのインストールイメージを入手する必要があります。
+\end_layout
+
+\begin_layout Standard
+まず
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.archlinux.org/
+\end_layout
+
+\end_inset
+
+にアクセスします。そこから右上の``Download''をクリックし、Arch Linux Downloadsのページに移動します。Arch Linuxのインス
+トールイメージには図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "AL_namingrule"
+
+\end_inset
+
+のような命名規則が定められています。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+archlinux-<
+\shape italic
+西暦
+\shape default
+>.<
+\shape italic
+リリースされた月
+\shape default
+>.<
+\shape italic
+バージョン番号
+\shape default
+>-dual.iso
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Arch Linuxインストールイメージの命名規則
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "AL_namingrule"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\end_layout
+
+\end_inset
+
+このうちの「<
+\shape italic
+西暦
+\shape default
+>.<
+\shape italic
+リリースされた月
+\shape default
+>.<
+\shape italic
+バージョン番号
+\shape default
+>」はArch Linux Downloads内の``Current Release''の内容と一致するので、どのバージョンが利用可能なのかがここで確認できます
+。
+\end_layout
+
+\begin_layout Standard
+ダウンロードに際し、BitTorrentが利用できる環境であれば``recommended''に従いtorrentファイルをダウンロードしてイメージを入手するの
+が良いでしょう。BitTorrentが利用できない場合は、``HTTP Direct Downloads''から日本のサーバを探し、ダウンロードします。この文書
+を執筆している2014年5月28日の段階では、
+\family typewriter
+ftp.tsukuba.wide.ad.jp
+\family default
+と
+\family typewriter
+jaist.ac.jp
+\family default
+の2箇所が利用できます。
+\end_layout
+
+\begin_layout Standard
+ダウンロードしたファイル名は、デフォルトでは命名規則に従ったものとなっています。これを適当なディレクトリに保存します。可能であれば、``HTTP
+ Direct Downloads''の``checksum''よりイメージのハッシュ値を入手し、ダウンロードしたファイルが正当なものかを確認するとよろしいでし
+ょう。
+\end_layout
+
+\begin_layout Section
+Arch Linuxイメージの起動
+\end_layout
+
+\begin_layout Standard
+さて、Arch Linuxイメージを入手ました。手に入れた道具は使わなければ宝の持ち腐れです。早速Arch Linuxを起動してみましょう。イメージをCDに焼い
+て光学ドライブ経由で起動するなり、仮想マシン上に起動メディアとしてArch Linuxイメージを指定して起動するなり、適当な方法で起動して下さい。
+\end_layout
+
+\begin_layout Standard
+さて、順調に起動処理が進むと、図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Choose_OS_syslinux"
+
+\end_inset
+
+のような画面が表示されます。これはブートローダがOSをブートする過程で、起動するOSをユーザが選択するフェーズです。今回仮想マシンにインストールするのは64ビッ
+ト版のArch Linuxですので、``Boot Arch Linux (x86_64)''を選択し、Enterキーを押下します。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_ArchLinux/syslinux.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+起動するOSを選択する（ブートローダ）
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Choose_OS_syslinux"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+OSを選択後、しばらくすると図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "StartPoint"
+
+\end_inset
+
+のような画面が表示されます。これがArch Linuxです。
+\end_layout
+
+\begin_layout Standard
+以降では、このようにキーボードでコマンドを逐次叩いていくCUIによって、OSをインストールしていきます。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_ArchLinux/booted.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Arch Linuxの起動
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "StartPoint"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Arch Linuxをインストールする
+\end_layout
+
+\begin_layout Standard
+それでは早速インストールを始めていきましょう。
+\end_layout
+
+\begin_layout Standard
+インストールの基本的な流れは以下の通りです。
+\end_layout
+
+\begin_layout Enumerate
+インストールイメージを起動する
+\end_layout
+
+\begin_layout Enumerate
+キーマップを変更する
+\end_layout
+
+\begin_layout Enumerate
+ネットワークへの接続を確認する
+\end_layout
+
+\begin_layout Enumerate
+ディスクを必要な領域ごとに切り分ける（パーティションを作成する）
+\end_layout
+
+\begin_layout Enumerate
+4.で作成したパーティションにファイルシステムを作成する
+\end_layout
+
+\begin_layout Enumerate
+5.で作成したファイルシステムをマウントし、OSのプログラムをディスクへ流し込む
+\end_layout
+
+\begin_layout Enumerate
+ディスク上のOSの設定を行う
+\end_layout
+
+\begin_layout Enumerate
+rootアカウントのパスワードを設定する
+\end_layout
+
+\begin_layout Enumerate
+ブートローダをインストールする
+\end_layout
+
+\begin_layout Enumerate
+システムを再起動させてディスクから起動し、rootアカウントでログイン、動作を確認する
+\end_layout
+
+\begin_layout Standard
+現在までに1.が終了しました。以下では順を追って作業を進めていきます。
+\end_layout
+
+\begin_layout Standard
+ここで、本文中ではコマンドを扱いますが、コマンド名は本文中ではタイプライタ体（
+\family typewriter
+typewriter type
+\family default
+）で表現し、実際にコマンドを用いての作業内容はタイプライタ体文字列を影付き枠で囲うことで表します。必要があれば、コマンド実行中の画面あるいは画面の一部を二重枠で
+囲うことで表します。ここでコマンドを記述する行の先頭に``
+\family typewriter
+$
+\family default
+''や``
+\family typewriter
+#
+\family default
+''が書かれる場合がありますが、これは実際の作業画面に於けるプロンプトを再現したものであり、実際には入力の必要はありません。加えて、斜体(
+\family typewriter
+\shape italic
+Italic
+\family default
+\shape default
+)で表現されている箇所は字体に関わらず各位による変更を必要とする箇所を示します。また本文中では、「コマンドを入力する」という行為を簡略のため「叩く」と表現します
+。
+\end_layout
+
+\begin_layout Standard
+本文中で扱われるコマンドについては適宜必要と思われる部分に関する説明を加えていきますが、いまいちピンとこない場合などは、manを用いることでコマンドの詳細な説明
+を得ることができます。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ man 
+\shape italic
+command_name
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩くと
+\family typewriter
+command_name
+\family default
+という名前のコマンドに関する説明を閲覧できます。
+\end_layout
+
+\begin_layout Subsection
+キーマップを変更する
+\end_layout
+
+\begin_layout Standard
+Arch Linuxのデフォルトのキー配列はUS仕様になっています。ですが日本語を第一言語とする方々の大多数はJIS配列のキーボードを使用しているはずです
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+US配列のキーボードを使用している方はこの小節は読み飛ばして構わない。
+\end_layout
+
+\end_inset
+
+。このため、キー配列を変更しないと、例えばダブルクォーテーション(
+\begin_inset Quotes eld
+\end_inset
+
+)を入力したいのにアットマーク(@)が入力されたり、括弧を閉じたいのに閉じなかったりと非常にイライラするので、キー配列をJIS配列に変更します。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# loadkeys jp106
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩き、キー配列を変更しましょう。
+\end_layout
+
+\begin_layout Subsection
+ネットワークへの接続を確認する
+\end_layout
+
+\begin_layout Standard
+Arch LinuxのインストールイメージにはインストールするOSのプログラムは実は入っていません。インストールイメージはOSという家を建てるための足場のような
+ものです。OSのプログラムは、Arch Linuxのサーバから持ってこなければなりません。よって、インターネットへの接続が確立しているか確かめる必要があります。
+\end_layout
+
+\begin_layout Standard
+固定IPアドレスを割り当ててインターネットへ接続している等、特に特殊な環境でない限り、Arch Linuxのインストールイメージは
+\family typewriter
+dhcpcd
+\family default
+というネットワークデーモン
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+デーモンとは、システム上で動いているプロセスのうち、表に出てこない（バックグラウンドで実行されている）ものを指す。
+\end_layout
+
+\end_inset
+
+により、既にインターネットへ接続されています。ここでは接続が確立していることを確かめるにとどめます。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# ping -c 3 www.tmu.ac.jp
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩き、接続を確認します。
+\family typewriter
+ping
+\family default
+とは引数に指定したサーバへ少量のネットワークパケットを送信してサーバとの通信状態を確認するコマンドです。今回はオプションに``
+\family typewriter
+-c 3
+\family default
+''を加えて、パケットの転送回数を3回に制限しました。
+\end_layout
+
+\begin_layout Subsection
+ディスクを必要な領域ごとに切り分ける（パーティションを作成する）
+\end_layout
+
+\begin_layout Subsubsection
+ディスクの確認
+\end_layout
+
+\begin_layout Standard
+続いて、ディスク上にパーティションを作成していきます。パーティションとはディスクの記憶領域が分割されたものです。例えば10GBのディスクを2GBと8GBに分割し
+たとすれば、そのディスクは2GBのパーティションと8GBのパーティションを持つことになります。
+\end_layout
+
+\begin_layout Standard
+パーティションの作成はこだわり出すと止まらなくなることがままあるので、ここはベターな作成法として、ディスクを分割せずに、ディスクをまるごと1つのパーティションと
+して扱うことにします。
+\end_layout
+
+\begin_layout Standard
+通常仮想マシンのディスクはインストールイメージには``/dev/sda''として認識されています。後述しますが、``/dev''とはコンピュータに接続されたデバ
+イス(
+\bar under
+dev
+\bar default
+ice)を管理するディレクトリ
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+別称フォルダ。今後はいわゆるフォルダもディレクトリと呼称する。
+\end_layout
+
+\end_inset
+
+で、sdaとはシステムに最初に認識されたディスクであるという意味です。今扱っている仮想マシンではディスクは1個のみですので、システムでは``/dev/sda''
+と認識されています。確認したい場合は、
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# lsblk
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩き、sdX(Xはa--zの間の任意の一字。通常はa)の行を探しましょう。通常は先頭に表示されているはずです。発見したら、その行の``SIZE''の列を確認し
+、インストール先のディスクの容量と一致しているかを確かめると良いでしょう。
+\end_layout
+
+\begin_layout Subsubsection
+パーティションの作成
+\end_layout
+
+\begin_layout Standard
+いよいよパーティションを作成します。以下では、ディスクが``/dev/sda''と認識されていることを仮定します。
+\end_layout
+
+\begin_layout Standard
+ディスクにおけるパーティションの情報は、パーティションテーブルとよばれるもので管理されています。現在、このパーティションテーブルの方式にはMBR(master
+ boot record)とGPT(GUID partition table)との2種類があります
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AP"
+
+\end_inset
+
+。MBRは枯れた方式で、GPTはモダンな方式です。ここでは新しさを求めてGPTでのパーティション管理を試みます。
+\end_layout
+
+\begin_layout Standard
+まず以下を叩きます。
+\family typewriter
+cgdisk
+\family default
+とは、ディスク上にGPTパーティションを作成するためのユーティリティです。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# cgdisk /dev/sda
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+すると図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cgdisk"
+
+\end_inset
+
+のような表示になるはずです。まれに``Warning! Non-GPT or damaged disk detected!''などと怒られる場合がありますが、ど
+うせ新たにパーティションを作るのですからシカトしてEnterを押下しましょう。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_ArchLinux/cgdisk.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+cgdisk
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "cgdisk"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+まず``New''を選択（左右矢印キーで選択可）するかNキーを押下してパーティションの作成に入ります。あとは元の表示になるまでずっとEnterキーを叩けば良いの
+ですが、折角ですので尋ねられる文章の意味を記しておきます。
+\end_layout
+
+\begin_layout Itemize
+First Sector (XXXX--YYYY, default=XXXX)（XXXX、YYYYは適当な値）
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+パーティションの開始位置を指定する。XXXXはディスク先頭0バイトからXXXXバイト目を示す。
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Size in Sectors or {KMGTP} (default=XXXX)（XXXX、YYYYは適当な値）
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+パーティションのサイズを指定する。デフォルト値XXXXは今作成しているパーティションの後ろに別のパーティションが存在しないため、ディスクのサイズに等しくなってい
+る。
+\begin_inset Newline newline
+\end_inset
+
+セクタ(Sector)というのは容量の単位。KMGTPも同様(KiB、MiB、GiB、TiB、PiB)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+2バイト接頭辞。それぞれ
+\begin_inset Formula $\mathrm{2^{10}B}$
+\end_inset
+
+、
+\begin_inset Formula $\mathrm{2^{20}B}$
+\end_inset
+
+、
+\begin_inset Formula $\mathrm{2^{30}B}$
+\end_inset
+
+、
+\begin_inset Formula $\mathrm{2^{40}B}$
+\end_inset
+
+、
+\begin_inset Formula $\mathrm{2^{50}B}$
+\end_inset
+
+を意味する。
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Current type is 8300(Linux filesystem)
+\begin_inset Newline newline
+\end_inset
+
+Hex code or GUID (L to show codes, Enter = 8300)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+パーティションのタイプを指定している。Linux用パーティションの場合8300が該当する。
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Current partition name is ''
+\begin_inset Newline newline
+\end_inset
+
+Enter new partition name, or <Enter> to use the current name:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+パーティション名を決める。デフォルトでは名無しのパーティションとなる。
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_ArchLinux/cgdisk_created.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+cgdisk（パーティション作成後）
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "cgfisk_created"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+もとの表示（図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cgfisk_created"
+
+\end_inset
+
+）に戻ったら、まず作成したパーティションを上下矢印キーを用いて選択し、次に左右矢印キーを用いて``Write''を選択するかShiftキーを押しながらWキーを押
+して
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+以後このようなキー操作を``Shift+W''のように表現する。
+\end_layout
+
+\end_inset
+
+パーティションをディスクへ書き込む作業へ入ります。``Areyou sure you want to write the partition table
+ to disk? (yes or no):''と聞かれるので、yesと入力し（``y''でないことに注意）パーティションをディスクに書き込みます。書き込みが終
+了したら再び図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cgfisk_created"
+
+\end_inset
+
+の表示に戻るので、左右矢印キーを用いて``Quit''を選択するかQキーを押してcgdiskを終了します。
+\end_layout
+
+\begin_layout Standard
+パーティションの作成の確認には
+\family typewriter
+lsblk
+\family default
+を使用すると良いでしょう。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# lsblk
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+を叩き、``sda''を確認すると、その直下に``sda1''が新たに表示されているはずです。この行の``TYPE''を確認すると、``PART''となっている
+と思います。これはPARTitionの意で、sdX1はディスクsdXに作成されたパーティションを意味しています。ちなみに、sdaにパーティションを何個も作ってい
+くと、もちろんsda2、sda3、
+\begin_inset Formula $\ldots$
+\end_inset
+
+と認識されていきます。
+\end_layout
+
+\begin_layout Subsection
+ファイルシステムの作成
+\end_layout
+
+\begin_layout Standard
+以上までの作業で、OSという家を建てる上での地均しは終了しました。次に基礎を築きます。
+\end_layout
+
+\begin_layout Standard
+今回はパーティションをext4(Fourth Extended File System)というファイルシステムでフォーマットします。ファイルシステムとは、ディス
+ク上に存在するファイルを管理するためのシステムで、OSの機能の一部です。
+\end_layout
+
+\begin_layout Standard
+/dev/sda1をext4でフォーマットするには、以下を叩きます
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ALBG"
+
+\end_inset
+
+では
+\family typewriter
+mkfs.ext4 /dev/sda1
+\family default
+となっているが、この文書でのコマンドの用法の統一のため異なる形式を用いた。
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# mkfs -t ext4 /dev/sda1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+以後の説明では、適宜「ディスク」と「ファイルシステム」を同義なものとして扱います。ハードウェアとしてのディスクを扱う場合、文脈上に説明を加えることとします。
+\end_layout
+
+\begin_layout Subsection
+ファイルシステムのマウント
+\end_layout
+
+\begin_layout Subsubsection
+ファイルとディレクトリ階層
+\end_layout
+
+\begin_layout Standard
+マウントとは、コンピュータに接続されたデバイスを、OSが管理および制御できる状態にすることを指します。ファイルシステムをマウントする場合、Linuxを始めとする
+Unix互換OSでは
+\family typewriter
+mount
+\family default
+というコマンドを用います。
+\end_layout
+
+\begin_layout Standard
+元来、Linuxには``すべてのものはファイルである(everything-is-a-file)''という思想があります
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LSP"
+
+\end_inset
+
+。つまり、ディスクやCDドライブ、ディスプレイやプリンタやキーボード、はたまたディレクトリや通常の意味でのファイル、さらにプロセスに至るまでの全てがLinuxに
+おいてはファイルとして扱われます。アクセスの方法も道具の相異は有りますがほぼ統一されており、それは単純に読み書きとして表現できます。
+\end_layout
+
+\begin_layout Standard
+さて、Linuxのファイルは``/''で表現されるルートディレクトリを頂上に、全てのファイルとディレクトリは``/''の下に位置します。厳密にはファイルの目的に
+応じて、``/''直下にいくつかのディレクトリが存在し、ファイルとディレクトリは``/''直下のディレクトリに振り分けられて存在しています。Linuxのとるこの
+ようなディレクトリ階層はFHS(Fileystem Hierarchy Standaed)と呼ばれ、標準化されていますが、実際のLinuxディストリビューション
+同士では細かい差異が存在しています。
+\end_layout
+
+\begin_layout Standard
+Arch Linuxにおけるディレクトリ階層は図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "AFH"
+
+\end_inset
+
+のようになります
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FHS"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AFH"
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabbing}
+\end_layout
+
+\begin_layout Plain Layout
+
+1234567890123456
+\backslash
+=7890
+\backslash
+=12345678901234567890 
+\backslash
+kill
+\end_layout
+
+\begin_layout Plain Layout
+
+/			   
+\backslash
+>rootディレクトリ（システムの最上位ディレクトリ）
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+├bin  	 	
+\backslash
+>全てのユーザ用の基本コマンドを格納するディレクトリ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+│	 	 	
+\backslash
+>
+\backslash
+>（現在は/usr/binへのシンボリックリンク）
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+├boot 	 	
+\backslash
+>ブートローダ用ファイルとカーネルイメージを格納するディレクトリ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+├dev  	 	
+\backslash
+>デバイスファイルを格納するディレクトリ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+├etc  	 	
+\backslash
+>OSの設定ファイルを格納するディレクトリ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+├home 	 	
+\backslash
+>一般ユーザ用ディレクトリ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+├lib  	 	
+\backslash
+>共有ライブラリとカーネルモジュールを格納するディレクトリ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+│	 	 	
+\backslash
+>
+\backslash
+>（現在は/usr/libへのシンボリックリンク）
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+├(lib64)   	
+\backslash
+>64bit環境用の共有ライブラリを格納するディレクトリ
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+│			  
+\backslash
+>
+\backslash
+>（現在は/usr/libへのシンボリックリンク）
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+├lost+found	
+\backslash
+>ファイルシステム障害発生時に復旧可能なファイルの一時保管場所 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+├mnt 		  
+\backslash
+>ファイルシステムの一時的なマウントポイントを格納するディレクトリ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+├opt 		  
+\backslash
+>通常のLinuxのディレクトリ階層では扱えないプログラムを格納するディレクトリ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+├proc 		 
+\backslash
+>カーネル及びプロセスの情報を格納するディレクトリ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+├root 		 
+\backslash
+>rootユーザ用ディレクトリ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+├run 		  
+\backslash
+>短期的に使用されるファイルを格納するディレクトリ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+├sbin 		 
+\backslash
+>システム管理用コマンド等を格納するディレクトリ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+│			  
+\backslash
+>
+\backslash
+>（現在は/usr/binへのシンボリックリンク） 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+├srv 		  
+\backslash
+>HTTP、FTP等のサービス用のデータ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+├sys 		  
+\backslash
+>OS全体の情報を格納するディレクトリ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+├tmp 		  
+\backslash
+>一時的なファイルを格納するディレクトリ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+├usr 		  
+\backslash
+>各種プログラム等を格納するディレクトリ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+└var 		  
+\backslash
+>頻繁に変更されるデータを格納するディレクトリ
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabbing}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Arch Linuxのディレクトリ階層
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "AFH"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+ファイルシステムのマウント
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ALBG"
+
+\end_inset
+
+によれば、OSをインストールするディスクを/mnt下にマウントしています。この文書に於いても
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ALBG"
+
+\end_inset
+
+に従い、/mnt下にマウントすることにしましょう。また、今回はディスク上にはファイルシステムが1つしか存在しませんので、そのファイルシステムを``/''として扱
+い（以下``/ファイルシステム''と呼称します。）/mntにマウントします。ちなみに、ファイルシステムは通常データを階層的に管理するために扱われるため、ファイル
+システムをマウントするときはディレクトリにマウントしないとエラーが起きます。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# mount /dev/sda1 /mnt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩き、ファイルシステムをマウントします。注意すべきことして、マウントするのはディスクではなくファイルシステムですので、
+\family typewriter
+mount
+\family default
+に指定する引数は/dev/sdaではなく/dev/sda1です。
+\end_layout
+
+\begin_layout Subsection
+OSをインストールする
+\end_layout
+
+\begin_layout Standard
+いよいよOSをインストールします。
+\end_layout
+
+\begin_layout Standard
+OSをインストールする前に、まずはOSのインストールに必要なパッケージをダウンロードするサーバを決めます。
+\end_layout
+
+\begin_layout Standard
+OSを構成するパッケージは、必要なものを全てひっくるめると数百MBもの大きさになり、パッケージ群を提供するサーバ及び通信回線に多大な負荷を及ぼします。更に、この
+パッケージ群を必要とするクライアントは何百何千、何万何十万という数になりますから、これを1台のサーバで賄おうとした場合サーバは通常処理能力の限界を瞬時に迎え即死
+します。このため、通常大規模なデータを多数のクライアントから要求されるような状況で扱う場合は、負荷分散のためミラーサーバと呼ばれるサーバを複数台用意し、特定のサ
+ーバに負荷が集中しないようにしています。
+\end_layout
+
+\begin_layout Standard
+サーバを分散することで得するのは運営側のみではありません。同じデータをダウンロードするにしても、例えば日本にいる利用者が日本にあるサーバからダウンロードするのと
+ブラジルにあるサーバからダウンロードするのとでは掛かる時間は雲泥の差です。回線の性能や使用状況等による差異も有りますが、同程度の回線を使用しているならば、物理的
+な距離の近い経路からアクセスしたほうが、一般にダウンロードに要する時間は少なく済むであろうことは直感的にも納得できると思います。
+\end_layout
+
+\begin_layout Standard
+Arch Linuxは現在世界各国にミラーサーバを構え、日本国内にも北陸先端科学技術大学院大学（通称JAIST)が提供するものと、筑波大学が提供するものとの2種
+類があります。察しがつくと思いますが、インストールイメージを入手する際に説明した2つのサーバである
+\family typewriter
+jaist.ac.jp
+\family default
+と
+\family typewriter
+ftp.tsukuba.wide.ad.jp
+\family default
+がそれぞれ該当します。どのミラーサーバにアクセスするかを設定するには/etc/pacman.d/mirrorlistを編集します。どちらのサーバを選んでも良いので
+すが、今回はJAISTのサーバを使う方法でいきたいと思います。筑波大学のサーバを使う場合も、以後で解説する方法と同様に行うことが可能です。
+\end_layout
+
+\begin_layout Subsubsection
+ミラーサーバの設定
+\end_layout
+
+\begin_layout Standard
+/etc/pacman.d/mirrorlistを設定します。
+\end_layout
+
+\begin_layout Standard
+このファイルは前述の通り、パッケージのダウンロードにどのサーバを使うかを指定するための設定ファイルです。Linuxの設定ファイルはほぼ全てテキストファイルですの
+で、設定を変更したりする場合にはテキストエディタを使用します。今回は一般的なテキストエディタに近い使用感を持つ
+\family typewriter
+nano
+\family default
+というエディタを使用します。以後の設定ファイルの編集に於いても
+\family typewriter
+nano
+\family default
+を使用していきます。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# nano /etc/pacman.d/mirrorlist
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩くと、図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "mirrorlist_nano"
+
+\end_inset
+
+のような表示になります。これが
+\family typewriter
+nano
+\family default
+のインターフェースです。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_ArchLinux/mirrorlist_nano.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+nanoによる/etc/pacman.d/mirrorlistの編集
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "mirrorlist_nano"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+このファイルには世界に点在するArch LinuxのミラーサーバのURLが収録されています。このまま何も変更も加えずにパッケージのダウンロードを試みると、有効な
+サーバとして
+\family typewriter
+mirror.us.leaseweb.net
+\family default
+が選択、使用されます。これはアメリカに存在するサーバです。行頭に``#''がついている行はコメントアウトされた行といい、データとして意味を成さない記述となります
+。文字通り「コメント」を書き込む際に用いられるものです。従って、コメントアウトされていない行のうち最も上位にある
+\family typewriter
+mirror.us.leaseweb.net
+\family default
+が選択されます。
+\end_layout
+
+\begin_layout Standard
+即ち、
+\family typewriter
+mirror.us.leaseweb.net
+\family default
+よりも上にJAISTのサーバのURLを書き込めば、パッケージのダウンロードはJAISTのサーバより行われることとなります。では早速JAISTのサーバのURLを探
+し出しましょう。
+\end_layout
+
+\begin_layout Standard
+まずCtrl+Wを入力してファイル内の文字列検索へ移行します。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+Search:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+という表示が画面下部に現れますので、そこへ``japan''と入力し、Enterキーを押下します。するとファイル内で``Japan''の文字列が含まれる行へカー
+ソルが移動します。該当するものが複数個存在する場合、現在のカーソル位置から最も近い行へ移動します。/etc/pacman.d/mirrorlistではJAISTの
+サーバと筑波大学のサーバと両方が含まれていますが、JAISTのサーバのほうがファイル内で上位に記載されているので、通常はJAISTのサーバのURL付近にカーソル
+が移動するはずです。
+\end_layout
+
+\begin_layout Standard
+続いてJAISTサーバのURLへ上下矢印キーでカーソルを合わせたら、Alt+6でカーソルの存在する行全体をコピーします。次にPgUpキーでファイルの上方へ移動し
+、
+\family typewriter
+mirror.us.leaseweb.net
+\family default
+よりも上の行にコピーしたURLを貼り付けます。コピーした内容の貼付けにはCtrl+Uとします。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_ArchLinux/mirrorlist_nano_modified.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+編集後の/etc/pacman.d/mirrorlist
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "mirrorlist_nano_modified"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "mirrorlist_nano_modified"
+
+\end_inset
+
+のように編集が完了したら、ファイルを保存しエディタを閉じます。まずCtrl+Oを入力し、ファイルを保存します。このとき、
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+File Nameto Write: /etc/pacman.d/mirrorlist
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と表示されます。コロン以降を変更すればファイル名の変更が可能ですが、今回はそのままEnterを押下します。すると
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+Wrote XXX lines
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と表示され、ファイルが保存されます（XXXはファイルの行数を示す整数）。続いて、Ctrl+Xを入力し、
+\family typewriter
+nano
+\family default
+を終了します。
+\end_layout
+
+\begin_layout Subsubsection
+パッケージのダウンロード
+\end_layout
+
+\begin_layout Standard
+いよいよ正真正銘のOSのインストールです。
+\end_layout
+
+\begin_layout Standard
+OSインストールにはpacstrapというスクリプトを使用します。これは後述するpacmanのラッパ
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+ある関数を使うために、関数および関数に必要なデータや引数、別の関数などを一緒にまとめて定義した関数。ここでは「関数」を「コマンド」に置き換えたものが該当する。w
+rapper。
+\end_layout
+
+\end_inset
+
+であり、このスクリプトを使うことで、OSのインストール先を指定してやるだけでほぼ何も考えずにOSのインストールが自動で成されるというスグレモノなのです。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# pacstrap -i /mnt base
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩き、インストールを開始します。コマンドの意味は、/mntにbaseカテゴリのパッケージのみをインストールする、というものです。baseカテゴリにはこれさえあ
+れば最低限は使えるというパッケージが含まれています
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+私達が通常想起する「最低限」とは程遠いことに注意。もっと低い次元の「最低限」である。
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Subsubsection
+/etc/fstabの編集
+\end_layout
+
+\begin_layout Standard
+OSのインストールも折り返し地点に近づいてきました。続いて/etc/fstabの編集に移ります。
+\end_layout
+
+\begin_layout Standard
+OS起動後、OSはシステムが格納されているファイルシステムをマウントしなければなりません。（詳しくはファイルシステム内にOSが存在するため、OS起動前にファイル
+システムは認識できません。このあたりの詳細は後述します）OS起動後にOSがマウントすべきファイルシステムを記載した設定ファイルが/etc/fstabです。これが
+正しく設定されていないとOSは起動時にエラーを出力し、起動に失敗します。
+\end_layout
+
+\begin_layout Standard
+/etc/fstabを編集する前に、まずは/etc/fstabを作成しましょう。以下を叩きます。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# genfstab -L -p /mnt >> /mnt/etc/fstab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+genfstab
+\family default
+で/mntにマウントされているファイルシステムにおけるfstabを作成し、それを/mntにマウントされているファイルシステムに書き込みます。
+\end_layout
+
+\begin_layout Standard
+続いて/etc/fstabを編集していきます。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# nano /mnt/etc/fstab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩くと、以下のような表示がなされると思います。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "90text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+tt
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabbing}
+\end_layout
+
+\begin_layout Plain Layout
+
+123456789012345
+\backslash
+=6789012
+\backslash
+=345678901
+\backslash
+=234567890123456789012345678
+\backslash
+=9012345
+\backslash
+=67890 
+\backslash
+kill
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+# 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+# /etc/fstab: static file system information 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+# 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+#<file system> 
+\backslash
+><dir>  
+\backslash
+><type>   
+\backslash
+><options>                  
+\backslash
+><dump> 
+\backslash
+><pass> 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+# /dev/sda1 UUID=d9a74548-5c57-23c6-91f2-888a1bc2fd67 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/dev/sda1      
+\backslash
+> /      
+\backslash
+> ext4   
+\backslash
+> rw,relatime,data=ordered  
+\backslash
+> 0      
+\backslash
+> 1
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabbing}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+チェックすべきは一箇所で、``
+\family typewriter
+<pass>
+\family default
+''の列の値が``1''となっているかを確認してください。他は特にいじらなくて良いと思います。
+\end_layout
+
+\begin_layout Subsection
+OSの設定を行う
+\end_layout
+
+\begin_layout Standard
+OSのインストール自体は完了しました。以後はOSの設定やユーザの追加、各種パッケージの追加、ブートローダのインストールを行います。
+\end_layout
+
+\begin_layout Subsubsection
+chroot(arch-chroot)
+\end_layout
+
+\begin_layout Standard
+現在使用しているArch LinuxというOSは言うまでもなくインストールメディアとしてのArch Linuxであり、ディスクにインストールしたArch
+ Linuxではありません。ディスク上にインストールされたOSの設定を行うには、やはりOSをインストールしたディスク内の設定ファイルを変更しなければなりません。
+ですが、今の状態ではファイルシステムが/mntにマウントされている都合上、設定ファイルのパスの先頭に``/mnt''を付けなくてはならず、面倒です。加えて、ディ
+スク上のOSでコマンドを実行したい場合も、同じくマウントしたファイルシステム経由ではいささか不都合が生じます。
+\end_layout
+
+\begin_layout Standard
+というわけで、ディスク上のOSを操作できるようにしましょう。これには、
+\family typewriter
+chroot
+\family default
+のラッパである
+\family typewriter
+arch-chroot
+\family default
+というスクリプトを用います。これはrootファイルシステムを変更(
+\bar under
+ch
+\bar default
+ange 
+\bar under
+root
+\bar default
+ filesystem)するためのものです。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# arch-chroot /mnt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩くことで、/mntにマウントされたファイルシステムをrootファイルシステムとして扱います。これはディスク上にインストールされたOSを起動している状態と同等
+です。
+\end_layout
+
+\begin_layout Subsubsection
+キーマップの変更
+\end_layout
+
+\begin_layout Standard
+環境が変更されたのでキー配列もデフォルトのUS仕様になっています。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# loadkeys jp106
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩き、キー配列を変更しましょう。
+\end_layout
+
+\begin_layout Standard
+また、これは一時的な変更であり、インストール完了後システムを再起動すると設定は無効化され、キー配列は再びUS配列に戻ってしまいます。これを阻止するには、/etc
+/vconsole.confに所定の設定を記述する必要があります。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# nano /etc/vconsole.conf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+を実行してファイルを開き、そこへ
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+KEYMAP='jp106'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と記述します。
+\end_layout
+
+\begin_layout Standard
+なお、これはコンソール上、即ちCUI上のみで有効な設定です。GUIに於いては設定が反映されない場合があります。GUI上におけるキーマップの設定は、第
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Arch-Linuxを使用する"
+
+\end_inset
+
+章で扱います。
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Subsubsection
+ロケールの設定
+\end_layout
+
+\begin_layout Standard
+ロケール(Locale)とは、ユーザが扱う言語を規定するものです。この分野の標準語は事実上英語であり、デフォルトではArch Linuxも英語が使用されています
+が、ロケールを変更することにより、英語以外の言語を使用することができます。用意されている言語はヨーロッパ方面に限らず全世界にまたがっています。
+\end_layout
+
+\begin_layout Standard
+ですが、ここでは扱う言語は英語のままとします。というのも、ASCIIに含まれない文字コードを扱う場合、特に何も設定していないCUI上では文字化けを起こすためです
+。残念ながら我々の日本語はASCIIには含まれない文字コードを扱うので、使えません。では日本語は使えないのかというとそういうわけではなく、CUIでは英語、GUI
+では日本語というように設定することが可能です。詳細は第
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Arch-Linuxを使用する"
+
+\end_inset
+
+章で扱います。
+\end_layout
+
+\begin_layout Standard
+ではロケールの設定をしましょう。最初に、使用するロケールを設定します。これは/etc/locale.genによって設定されています。これを編集します。以下のように
+叩きます。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# nano /etc/locale.gen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ロケール名は、``xx_yy.ZZZ''というフォーマットになっています。xxは言語コード、yyは国名コード、ZZZは文字コードをそれぞれ示します。例えばロケール
+名が``en_US.UTF-8''である場合、このロケールは文字コードにUTF-8を用いるアメリカ英語であるという意味になります。
+\end_layout
+
+\begin_layout Standard
+先程「CUIでは英語、GUIでは日本語というように設定することが可能」と説明しましたが、/etc/locale.genが扱う内容はシステムすべてのロケールであり、
+ここで日本語を扱うように設定しないと、システム上で日本語を扱うことが不可能になります。ちなみにロケールは複数選択が可能です。
+\end_layout
+
+\begin_layout Standard
+ここでは以下のロケールをアンコメント
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+コメント行の先頭にある``#''を削除すること。これにより記述が設定として反映される。
+\end_layout
+
+\end_inset
+
+します。
+\end_layout
+
+\begin_layout Itemize
+en_US.UTF-8
+\end_layout
+
+\begin_layout Itemize
+en_US.ISO-8859-1
+\end_layout
+
+\begin_layout Itemize
+ja_JP.EUC-JP
+\end_layout
+
+\begin_layout Itemize
+ja_JP.UTF-8
+\end_layout
+
+\begin_layout Standard
+設定ファイルを編集したら、今度は設定を反映させます。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# locale-gen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩くことで設定が反映されます。
+\end_layout
+
+\begin_layout Standard
+続いて、CUI上で使用する言語を規定します。これは/etc/locale.confで設定されます。今回は英語を使用するので、/etc/locale.confには
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+LANG=
+\begin_inset Quotes erd
+\end_inset
+
+en_US.UTF-8
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+とだけ書いて保存します。
+\end_layout
+
+\begin_layout Subsubsection
+タイムゾーンの変更
+\end_layout
+
+\begin_layout Standard
+続いてシステムの時間を設定します。インターネットに接続していれば、時刻サーバと標準時が自動的に同期されるため、正しいタイムゾーンを設定すれば時刻は自動的に正しい
+時刻に補正されます。
+\end_layout
+
+\begin_layout Standard
+Linuxでは日本標準時はおおよその場合``Asia/Tokyo''として表現されます。タイムゾーンの情報は/usr/share/zoneinfo/下に置かれて
+います。日本のタイムゾーンの情報は、/usr/share/zoneinfo/Asia/Tokyoとなります。これを/etc下に置きますが、ファイルのコピーを置く
+のではなく/usr/share/zoneinfo/Asia/Tokyoへのシンボリックリンク
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+あるファイルへのアクセスを異なる場所から行うための手段。ここでは/usr/share/zoneinfo/Asia/Tokyoへのアクセスにそれを直接指定するので
+はなく/etc/localtimeを指定することで/usr/share/zoneinfo/Asia/Tokyoへアクセスが可能となる。
+\end_layout
+
+\end_inset
+
+を/etcに置くようにします。シンボリックリンクの名称は/etc/localtimeとします。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+ハードウェア時刻の変更
+\end_layout
+
+\begin_layout Standard
+次にハードウェアの時刻を設定します。適切なハードウェア時刻を設定しないと、システムの時刻に誤差が生じる可能性があります。
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ALBG"
+
+\end_inset
+
+によれば、ハードウェア時刻にはUTC
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+協定世界時(coordinated universal time)。標準時の基準となるもの。
+\end_layout
+
+\end_inset
+
+を設定することが推奨されているので、以下のように叩きます。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# hwclock --systohc --utc
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+ホスト名の変更
+\end_layout
+
+\begin_layout Standard
+ホスト名とはいわばコンピュータの名前です。ネットワーク上でコンピュータを指し示すものとして扱われます。
+\end_layout
+
+\begin_layout Standard
+設定自体は/etc/hostnameというファイルに記載された文字列がホスト名として認識されますが、今回は引数をそのまま標準出力
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+通常はディスプレイを意味する。
+\end_layout
+
+\end_inset
+
+に表示する
+\family typewriter
+echo
+\family default
+というコマンドと、得られた出力を入力として別の処理へ与えるリダイレクトという機能を用いて簡潔に設定することにします。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# echo 
+\begin_inset Quotes eld
+\end_inset
+
+
+\shape italic
+HOSTNAME
+\shape default
+
+\begin_inset Quotes erd
+\end_inset
+
+ > /etc/hostname
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩くことで、ホスト名が
+\shape italic
+HOSTNAME
+\shape default
+に設定されます。詳細を説明すると、まずechoによって
+\shape italic
+HOSTNAME
+\shape default
+は標準出力に出力されますが、リダイレクトが使用されているので、
+\shape italic
+HOSTNAME
+\shape default
+はそのままリダイレクト先への入力として扱われます。リダイレクトは入力文字列としてHOSTNAMEを受け取り、そのまま出力先に指定された/etc/hostname
+に内容を書き込みます。
+\end_layout
+
+\begin_layout Standard
+処理結果を確認するには、エディタを用いるか、
+\family typewriter
+cat
+\family default
+というコマンドを用いて
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# cat /etc/hostname
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+とすれば良いでしょう。
+\family typewriter
+cat
+\family default
+は引数に指定したファイルを標準出力上に表示するコマンドです。
+\end_layout
+
+\begin_layout Subsubsection
+ネットワークの設定
+\end_layout
+
+\begin_layout Standard
+Arch Linuxでは、ネットワーク管理の為のネットワークマネージャとして、規定としてはnetctlを使用します
+\begin_inset CommandInset citation
+LatexCommand cite
+key "An"
+
+\end_inset
+
+。netctlはCUIベースのネットワークマネージャであり、GUIを用いたネットワークマネージャのような直感的な使い勝手はありませんが、テキストファイルから構成
+される簡潔な設定ファイルを用いることで柔軟なネットワーク設定を行うことが出来ます。
+\end_layout
+
+\begin_layout Standard
+netctlはchrootされた環境では動作出来ません。ここでは、以下を叩くことでnetctlを動作させる為の依存関係を解決するにとどめておきましょう。netc
+tlについては第
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Arch-Linuxを使用する"
+
+\end_inset
+
+章で扱います。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# pacman -S dhclient
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ネットワークへの接続にイーサネットによる有線接続でなくwifiによる無線接続を用いる場合は、こちらも依存関係を満たすためにwpa_supplicantというパッ
+ケージをインストールする必要があります。当該環境においては、上記の代わりに下記を叩いてください。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# pacman -S dhclient wpa_supplicant
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+rootアカウントのパスワードを決定する
+\end_layout
+
+\begin_layout Standard
+OSを使用するユーザのアカウントには通常一般ユーザとスーパーユーザの2種類が存在します
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+厳密にはこの2種類に加え、特定のプロセスが使用するシステムアカウントと呼ばれる1種類が加わる。
+\end_layout
+
+\end_inset
+
+。一般ユーザというのは、字面の通り通常用途に使用するユーザのアカウントであり、OS内で行使できる権利に制限があります。例えばシステム全体に影響する設定の変更は一
+般ユーザには許可されていません。対して、スーパーユーザというのはOS内で行使できる権利に制限のないアカウントです。スーパーユーザの権限は実に強力で、スーパーユー
+ザが定められたOSの中であれば全ての行為が実現できます
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+実はできないこともある。例えば、如何なるユーザ、グループにも読み書き実行を許可しないファイルへの読み書き実行はスーパーユーザでも不可能。スーパーユーザは全能の存
+在ではない。
+\end_layout
+
+\end_inset
+
+。いわばそれはシステムを創造することもでき、またシステムを破壊することもできるのです。ちなみに、スーパーユーザのアカウントはLinuxでは通常rootアカウント
+と呼ばれています。
+\end_layout
+
+\begin_layout Standard
+デフォルトではrootアカウントのみがシステム上には存在しています。よって、通常は一般ユーザ用のアカウントも新たに作成するのですが、それはインストール作業が完了
+してから、ということにしましょう。デフォルトのrootアカウントにはパスワードが設定されていません。まずはこちらを先にどうにかしましょう。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# passwd
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩くと、
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+Enter new UNIX password:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+というプロンプトが表示されるので、パスワードを入力します。ここで、キーボードをいくら叩こうとも、入力内容は画面に表示されないことに注意してください。画面に表示さ
+れなくとも入力された内容は保持されていますし、ミスタイプした場合はBackspaceキーを使用して訂正することも可能です。
+\end_layout
+
+\begin_layout Standard
+パスワードを入力したら、
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+Retype new UNIX password:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と表示されますので、再度同じパスワードを入力します。
+\end_layout
+
+\begin_layout Standard
+入力に成功したら、
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+passwd: password updated successfully
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と表示されます。
+\end_layout
+
+\begin_layout Subsection
+ブートローダをインストールする
+\end_layout
+
+\begin_layout Standard
+OSは通常ディスク内（詳しくはディスク上のファイルシステム内）に存在するということは既にご存知であると思います。OSがファイルシステムを管理下に置くには、ファイ
+ルシステムをマウントしなければなりません。さて、ここで疑問が生じます。ファイルシステム内に存在するOSをコンピュータ起動時に呼び出すにはどうすればいいのでしょう
+。コンピュータの起動時には当然OSは動作していません。するとOSが起動していないのでハードウェアを制御下に置けません。しかしOSはディスクというハードウェアの中
+に存在するプログラムです。困ったことになりました。OSを起動するためにはOSが必要ですが、OSを起動するためのOSはどのように起動すればよいのでしょう
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+似たような問題に「コンパイラをコンパイルするためのコンパイラのコンパイルはどうすればいいのか」というものがあり、これはブートストラップ問題と呼ばれる。「服を買い
+に行くための服が無い」という問題との類似点が指摘されている［要出典］。ちなみにコンパイラを処理するためのコンパイラのコンパイルは元を辿って行くと最初期には手で行
+われた（はず）し、そもそもソフトウェアではなかった。
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+これを解決するのがブートローダ（ブートストラップローダ）
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+英語ではbootstrap loaderと書く。ブーツのつまみ革(bootstrap)に由来する。ブーツのつまみ革ってなんだという人は、小学生が履いている上履き
+のかかと部分についてたアレを思い出すと良いかもしれない。
+\end_layout
+
+\end_inset
+
+というプログラムで、実はこのブートローダがいわば「OSを起動するためのOS」となるのです。
+\end_layout
+
+\begin_layout Standard
+では早速導入していきましょう。今回はsyslinuxというブートローダを使用します。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# pacman -S syslinux gptfdisk
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩き、syslinuxのパッケージを導入します。続いて、ブートローダの設定のために、
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# syslinux-install_update -iam
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩きます。最後に、syslinuxの設定ファイルである/boot/syslinux/syslinux.cfgを設定します。
+\end_layout
+
+\begin_layout Standard
+デフォルトではカーネルイメージの場所が/dev/sda3となっているのですが、もちろん/dev/sda3というパーティションは存在しないので、これを/dev/s
+da1に書き換えます。/dev/sda3となっている箇所が複数箇所ある場合は、その都度/dev/sda1に書き換えます。設定を終えたら変更を保存して終了します。
+\end_layout
+
+\begin_layout Subsection
+インストールの終了
+\end_layout
+
+\begin_layout Standard
+これでインストールの全工程が終了しました。お疲れ様でした。最後にシステムを終了し、仮想マシンをオフにします。
+\end_layout
+
+\begin_layout Standard
+まずシェル
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+今までコマンドを入力してきた環境をシェルという。現在使用しているシェルはCUIのシェルであり、GUIのシェルも存在する。
+\end_layout
+
+\end_inset
+
+上で
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# exit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩くと
+\family typewriter
+chroot
+\family default
+が終了し、インストールメディアへ帰ってきます。
+\family typewriter
+exit
+\family default
+は本来ユーザをログアウトするためのコマンドですが、
+\family typewriter
+chroot
+\family default
+下においては
+\family typewriter
+chroot
+\family default
+の終了を意味します。
+\end_layout
+
+\begin_layout Standard
+続いて、マウントしていたファイルシステムをアンマウント
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+字面の通りマウントを解くこと。
+\end_layout
+
+\end_inset
+
+します。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# umount /mnt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩くことで、/mntにマウントされていたファイルシステムをアンマウントします。
+\end_layout
+
+\begin_layout Standard
+最後にシステムをシャットダウンしましょう。これには以下のように叩きます。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# shutdown -h now
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+字面の通り、現時点を以って電源を落とせ、という意味です。これによりOSはシャットダウン処理を行い、コンピュータはシャットダウンされます。
+\end_layout
+
+\begin_layout Chapter
+Arch Linuxを使用する
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Arch-Linuxを使用する"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+第
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Arch-Linuxのインストール"
+
+\end_inset
+
+章でArch Linux自体のインストールは完了しました。しかしOSをインストールしたというだけでは明らかに消化不十分で、実用に耐えうるようなOSを本ゼミの参加
+者諸氏は必要としているはずです。Arch Linuxのインストールが完了した直後においては、訓練された人間以外はほぼ何も出来ないと言ってもよい、まっさらな環境が
+眼前に広がるのみです。しかし、このまっさらな環境は、骨格を既に備え、全ての基本となる、頼もしい環境であるともいえます。
+\end_layout
+
+\begin_layout Standard
+本章ではArch Linuxを一般的な用途に用いる為の諸工程を扱います。まずインターネットに接続するためのネットワークマネージャの設定、Arch
+ Linuxの標準パッケージマネージャである
+\family typewriter
+pacman
+\family default
+の紹介と説明、一般ユーザの追加、各種パッケージのインストールとその設定、またシステムそれ自体の各種設定を扱い、最終的に日本語環境下でのブラウジングを可能とする環
+境を構築します。また補足として、Arch Linuxを使う上で知っておくと便利と思われるものをいくつか紹介しておくことにします。
+\end_layout
+
+\begin_layout Section
+netctlの設定
+\end_layout
+
+\begin_layout Standard
+第
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Arch-Linuxのインストール"
+
+\end_inset
+
+章でも扱った通り、Arch Linuxは規定のネットワークマネージャとしてnetctlを使用します。netctlはCUIベースのネットワークマネージャで、テキス
+トファイルによる設定ファイルを用いる事で柔軟かつ軽快な動作を可能にしています。またnetctlはArch Linuxが抱えるプロジェクトの一つでもあり、このため
+Arch Linuxとnetctlの親和性は非常に高いものになっています。
+\end_layout
+
+\begin_layout Standard
+GNU/LinuxをはじめとするUnix系OSには、他にwicd
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://launchpad.net/wicd
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+やnetworkmanager
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.gnome.org/Projects/NetworkManager
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+等のネットワークマネージャがあり、これらはLinuxディストリビューションに依存していない汎用なネットワークマネージャです。もちろんnetctlもまた、Arch
+ Linuxが抱えるプロジェクトではありますが、汎用のネットワークマネージャです。ここではArch Linuxとの親和性と事前準備に掛かる手間の少なさとから、n
+etctlを使用してネットワークを設定していきます。
+\end_layout
+
+\begin_layout Standard
+netctlは、/etc/netctl下に配置される設定ファイルを元にネットワークを設定します。何も設定されていない状態では、/etc/netctlは以下のよう
+な3個のディレクトリが配置されているのみです。ここで``
+\family typewriter
+hoge/
+\family default
+''はhogeという名前のディレクトリを表現していることとします。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# cd /etc/netctl && ls
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+examples/ hooks/ interfaces/
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+#
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+それでは、設定ファイルを作成しましょう。今回は、現在インターネットをクライアントとして利用する際にはほとんどと言って良い程に広く使われるDHCPを用いた接続を想
+定しています。本ゼミが扱う範疇には含まれませんが、インターネットを利用する上ではDHCP以外の接続方式も存在します。またIPはIPv4を利用するものとします。
+\end_layout
+
+\begin_layout Standard
+まず、自分の環境でネットワークアダプタがどのような記号で表されるかを確認します。ネットワークアダプタとは、その名の通りネットワークを利用する際に使用するアダプタ
+で、具体的にはイーサネットとかwifiを利用するためにシステムへ組み込む機械の事を指します。これは以下を叩くことで確認が可能です。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# ip a
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+この結果、例えば以下のような結果が得られるでしょう。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group
+ default
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+inet 127.0.0.1/8 scope host lo
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+valid_lft forever preferred_lft forever 
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+inet6 ::1/128 scope host
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+valid_lft forever preferred_lft forever 
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+2: enp0s25: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default
+ qlen 1000
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+link/ether 00:26:2d:f5:e6:b0 brd ff:ff:ff:ff:ff:ff 
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+3: wls1: <BROADCAST,MULTICAST> mtu 1500 qdisc mq state DOWN group default
+ qlen 1000
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+link/ether 00:26:c6:c6:32:88 brd ff:ff:ff:ff:ff:ff
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+最近のインストールであれば
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+厳密に言えば新しめのudevを使用している場合となる。しかしudevは現在systemdの一部になっている(
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.archlinux.org/index.php/udev
+\end_layout
+
+\end_inset
+
+)ので、現行のsystemdを用いていればudevも自動的に新しくなる。
+\end_layout
+
+\end_inset
+
+、この一覧のうち、``enp''で始まる文字列はイーサネットアダプタ（有線LAN）を指し、また``wls''で始まる文字列はwifiアダプタ（無線LAN）を指し
+ます。以下では、有線LANを使用する場合と無線LANを使用する場合とのそれぞれについて説明を行います。ただし、以下の説明ではイーサネットアダプタをenp0s25
+、wifiアダプタをwls1と表すこととします。ちなみに、このようなシステム上でデバイスを指し示す文字列をデバイス名と言います。つまり、この例では、イーサネット
+アダプタのデバイス名はenp0s25、wifiアダプタのデバイス名はwls1となります。
+\end_layout
+
+\begin_layout Subsection
+有線LANを使用する場合の設定
+\end_layout
+
+\begin_layout Standard
+設定ファイルのテンプレートは/etc/netctl/examples/下に格納されています。ディレクトリに格納されているテンプレートは複数あり、多岐に渡る接続方
+法をサポートしていますが、どのテンプレートがどの接続方式を扱うのかは概ねテンプレートファイルの名前を見れば把握できるようになっています。ここでは有線LAN（イー
+サネット）でDHCPによりインターネットへ接続するので、以下のように叩きます。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# cp /etc/netctl/examples/ethernet-dhcp /etc/netctl/
+\shape italic
+hoge
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+設定ファイルの名前は一目で判別できるような物を選ぶと後で困らなくて済みます。例えば今回のようにイーサネットアダプタがenp0s25と表現されるならば、設定ファイ
+ルの名前は``enp0s25-dhcp''とするとよいでしょう。
+\end_layout
+
+\begin_layout Standard
+設定ファイルを作成したら、次に内容を編集します。適当なエディタで設定ファイルを開くと、図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "ethernet-dhcp"
+
+\end_inset
+
+のような内容になっています。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+Description='A basic dhcp ethernet connection'
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+Interface=eth0
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+Connection=ethernet
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+IP=dhcp
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+## for DHCPv6
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+#IP6=dhcp
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+## for IPv6 autoconfiguration
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+#IP6=stateless 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ethernet-dhcpの内容
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "ethernet-dhcp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+今回はIPv4を使用するので、変更する箇所は``Interface=eth0''の箇所のみです。ここをイーサネットアダプタのデバイス名に置換します。つまり、図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "ethernet-dhcp_modified"
+
+\end_inset
+
+のように内容を編集します。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+Description='A basic dhcp ethernet connection'
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+Interface=enp0s25
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+Connection=ethernet
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+IP=dhcp
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+## for DHCPv6
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+#IP6=dhcp
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+## for IPv6 autoconfiguration
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+#IP6=stateless 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ethernet-dhcpの内容
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "ethernet-dhcp_modified"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+無線LANを使用する場合の設定
+\end_layout
+
+\begin_layout Standard
+無線LANを使用する場合も、有線LANを使用する場合と基本的な部分は変わりません
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+むしろ無線LANを設定する場合、wifiアダプタが適切に認識され、ドライバが読み込まれているか否かによって難易度に劇的な差が出る。前述の
+\family typewriter
+ip a
+\family default
+でwifiアダプタを指す文字列が表示された場合、設定はほぼ終わったものと解釈してよろしい。もし表示されない場合は、
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.archlinux.org/index.php/Wireless_network_configuration
+\end_layout
+
+\end_inset
+
+などを参照してシステムへwifiアダプタを認識させる必要があるが、この作業は一般に面倒であり、また単一の対処法が存在しない。よって、この詳細はこの文書では割愛す
+る。
+\end_layout
+
+\end_inset
+
+。ただし、wifiでは通信における種々の暗号化方式がテンプレートとして用意されているので、適切なテンプレートを選択する必要があります。もちろん、テンプレートに頼
+らず全部自力で設定を行うという方は選択の必要はありませんし、そもそもテンプレートを利用する必要もありません。テンプレートを利用する場合、例えば暗号化方式としてW
+PAを利用する場合は、
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\family typewriter
+\shape italic
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# cp /etc/netctl/examples/wireless-wpa /etc/netctl/
+\shape italic
+fuga
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+のように叩き、内容を編集します。この内容は図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "wireless-wpa"
+
+\end_inset
+
+のようになります。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "80text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+Description='A simple WPA encrypted wireless connection' 
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+Interface=wlan0
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+Connection=wireless
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+Security=wpa
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+IP=dhcp
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+ESSID='MyNetwork'
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+# Prepend hexadecimal keys with 
+\backslash
+"
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+# If your key starts with ", write it as '""<key>"'
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+# See also: the section on special quoting rules in netctl.profile(5) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+Key='WirelessKey'
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+# Uncomment this if your ssid is hidden
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+#Hidden=yes
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+wireless-wpaの内容
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "wireless-wpa"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+この場合も、``Interface=wlan0''の箇所を適切なデバイス名へ変更します。また、``Key='WirelessKey'''の箇所を適切なパスフレー
+ズに変更します。パスフレーズが``Jerusalem''であれば、修正後は図のようになります。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "80text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+Description='A simple WPA encrypted wireless connection' 
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+Interface=wls1
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+Connection=wireless
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+Security=wpa
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+IP=dhcp
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+ESSID='MyNetwork'
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+# Prepend hexadecimal keys with 
+\backslash
+"
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+# If your key starts with ", write it as '""<key>"'
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+# See also: the section on special quoting rules in netctl.profile(5) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+Key='Jerusalem'
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+# Uncomment this if your ssid is hidden
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+#Hidden=yes
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+wireless-wpaの内容
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "wireless-wpa_modified"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ただ、以上のように設定こそ可能ですが、無線LANを構成する場合、もっと便利な方法があります。
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\family typewriter
+\shape italic
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# wifi-menu 
+\shape italic
+<devname_wifi>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩くと、インタラクティブな設定画面が表示されます。
+\shape italic
+devname_wifi
+\shape default
+の箇所はwifiアダプタのデバイス名を指定します。
+\end_layout
+
+\begin_layout Standard
+セキュリティ意識の高い方は、平文としてパスフレーズを保管することに嫌忌するかと思います。そんな方のために、パスフレーズを暗号化して保管する方法もあります。具体的
+な方法は
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.archlinux.org/index.php/netctl
+\end_layout
+
+\end_inset
+
+をご参照ください。
+\end_layout
+
+\begin_layout Subsection
+接続
+\end_layout
+
+\begin_layout Standard
+設定ファイルを作成後、以下のように叩くと、自動的にネットワークの構成やネットワークアダプタの設定その他諸々が行われ、インターネットへ接続されます。
+\shape italic
+config_file
+\shape default
+へは設定ファイルの名前を指定します。
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\family typewriter
+\shape italic
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# netctl start 
+\shape italic
+<config_file>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+この設定を常に利用し、次回起動時も利用する場合は、以下のように叩くとよいでしょう。
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\family typewriter
+\shape italic
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# netctl enable 
+\shape italic
+<config_file>
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+# systemctl enable netctl
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+また、接続とは直接関係ありませんが、インターネットへの接続設定を容易に他人に見られてしまうのはセキュリティ上好ましくありません。設定を確認できるのはシステムの管
+理者のみに限るべきです。このようなファイルに関する権限(permission)の設定を行うには、
+\family typewriter
+chmod
+\family default
+というコマンドを使用します。今回は以下のように叩くことで、所望の設定を得られます。
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\family typewriter
+\shape italic
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# chmod go-r 
+\shape italic
+<config_file>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\family typewriter
+pacman
+\end_layout
+
+\begin_layout Standard
+多くのLinuxディストリビューションでは、パッケージの管理のためにパッケージマネージャというプログラムを使用しています。Linuxディストリビューションはディ
+ストリビューション毎にパッケージの貯蔵庫とでも言うべきレポジトリというサーバを持っており、パッケージマネージャはこのレポジトリにアクセスし、コマンドとして命令さ
+れたパッケージを検索またはインストールしたり、あるいはシステムにインストールされたパッケージをアンインストールするなどの機能を持ちます。
+\end_layout
+
+\begin_layout Standard
+Arch Linuxがデフォルトで使用するパッケージマネージャは
+\family typewriter
+pacman
+\family default
+と呼ばれるものです。本来パッケージマネージャは前述の機能以外に多数の機能を持ち、その例に漏れず
+\family typewriter
+pacman
+\family default
+も多数の機能を持ちますが、その詳細は割愛し、本文中で
+\family typewriter
+pacman
+\family default
+を扱う際に、文脈に関係する機能を都度説明していくこととします。
+\end_layout
+
+\begin_layout Subsection
+
+\family typewriter
+pacman
+\family default
+の設定
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+pacman
+\family default
+は設定ファイルとして/etc/pacman.confを使用します。このファイルは、
+\family typewriter
+pacman
+\family default
+が使用するレポジトリを指定したり、
+\family typewriter
+pacman
+\family default
+が利用するオプションを選択するためのものです。
+\end_layout
+
+\begin_layout Standard
+ご多分に漏れずこの設定ファイルもテキストファイルです。今回はGUIでの日本語環境構築のためにレポジトリを追加する必要があるため、設定ファイルを編集していきます。
+\end_layout
+
+\begin_layout Standard
+レポジトリは通常図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Repository_Form"
+
+\end_inset
+
+のような形式で指定されます。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+[レポジトリ名]
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+SigLever = <レポジトリに対する認証の程度>
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+Server = <レポジトリのURL>
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+レポジトリの形式
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Repository_Form"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ただし、Arch Linux公式レポジトリ(core、community、community-testing、exta、multilib、multilib-te
+stingなど)は、``
+\family typewriter
+Server = <レポジトリのURL>
+\family default
+''の代わりに、``
+\family typewriter
+Include = /etc/pacman.d/mirrorlist
+\family default
+''を指定します。
+\end_layout
+
+\begin_layout Standard
+今回追加するレポジトリは、GUI上で日本語を入力するためのIMEであるMozc
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://code.google.com/p/mozc/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+を公開しているレポジトリです。
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.archlinux.org/index.php/Mozc
+\end_layout
+
+\end_inset
+
+に記載の通り、
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "80text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+[pnsft-pur]
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+SigLevel = Optional TrustAll 
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+Server = http://downloads.sourceforge.net/project/pnsft-aur/pur/$arch
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+を/etc/pacman.confに追記します。場所はどこでも良いのですが、ファイルの末尾に追記するのがベターです。
+\end_layout
+
+\begin_layout Subsection
+
+\family typewriter
+pacman
+\family default
+を使う
+\end_layout
+
+\begin_layout Standard
+レポジトリを追記したら、以下を叩きます。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# pacman -Syu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+これはArch Linuxを使用する上で頻繁に唱えていくコマンドの一つです。意味としては/etc/pacman.d/mirrorlistで設定されたArch
+ Linuxのサーバと同期し、レポジトリの更新、パッケージのアップデートの確認を行うものです。
+\end_layout
+
+\begin_layout Standard
+続いて、
+\family typewriter
+sudo
+\family default
+というパッケージをインストールします。これは次節で一般ユーザのアカウントを追加した場合、システムに変更を及ぼすような操作が一般ユーザではできないので、一時的に一
+般ユーザにスーパーユーザの権限を与えるためのプログラムです。
+\end_layout
+
+\begin_layout Standard
+インストールには、以下のように叩きます。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# pacman -S sudo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+さて、パッケージのインストールを扱ったからには、パッケージのアンインストールの方法も扱っておかないと均衡が取れないような気がするので、アンインストールのためのコ
+マンドも併せて扱っておきましょう。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# pacman -Rs 
+\shape italic
+PACKAGE_NAME
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩くことで、
+\shape italic
+PACKAGE_NAME
+\shape default
+をアンインストールすることができます。PACKAGE_NAMEに関連する全てのパッケージ、データなどを削除したい場合は、
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# pacman -Rsc 
+\shape italic
+PACKAGE_NAME
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+とすると良いでしょう。
+\end_layout
+
+\begin_layout Section
+
+\family typewriter
+sudo
+\family default
+の設定
+\end_layout
+
+\begin_layout Standard
+さて、
+\family typewriter
+sudo
+\family default
+を一般ユーザに有効化する場合、一般にユーザをwheelというグループに追加する必要があります。グループの追加に関しては次節で扱いますが、ここでは
+\family typewriter
+sudo
+\family default
+の設定ファイルを編集する
+\family typewriter
+visudo
+\family default
+を用いて、予めwheelグループに対して
+\family typewriter
+sudo
+\family default
+を有効化しておくことにしましょう。
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+visudo
+\family default
+とは/etc/sudoersを編集するファイルですが、
+\family typewriter
+visudo
+\family default
+をそのまま叩くと
+\family typewriter
+vi
+\family default
+というエディタが起動し、慣れない人が使うと訳が分からずパニックに陷る可能性があります。ここではエディタとして
+\family typewriter
+nano
+\family default
+を指定し、安心して編集することができるようにします。このためには
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# EDITOR=nano visudo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩きます。
+\end_layout
+
+\begin_layout Standard
+さて、どこを編集するかですが、ファイル中にある
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "70text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+## Uncomment to allow members of group wheel to execute any command 
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+#%wheel ALL=(ALL) ALL
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+という記述の2行目、即ち``
+\family typewriter
+#%wheel ALL=(ALL) ALL
+\family default
+''をアンコメントします。これにより、コメント文にもあるとおり、wheelグループに所属するユーザに
+\family typewriter
+sudo
+\family default
+が有効となります。
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+visudo
+\family default
+による変更はシステム再起動後でないと有効になりません。ですが、ユーザをグループに追加するという操作もシステムの再起動後に有効になるので、ついでにユーザアカウント
+についての操作を行ってから再起動することにしましょう。
+\end_layout
+
+\begin_layout Section
+ユーザアカウント
+\end_layout
+
+\begin_layout Subsection
+一般ユーザアカウントの追加
+\end_layout
+
+\begin_layout Standard
+現在システム上にはスーパーユーザしか存在せず、これは非常にまずいことであることは第
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Arch-Linuxのインストール"
+
+\end_inset
+
+章で説明しました。ここで一般ユーザのアカウントをシステムに追加し、以後の作業は一般ユーザのアカウントを用いて行うことにしましょう。
+\end_layout
+
+\begin_layout Standard
+ユーザアカウントを追加するには、以下を叩きます。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# useradd -m -g users -s /bin/bash 
+\shape italic
+USERNAME
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+オプションの意味は
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.archlinux.org/index.php/Users_and_Groups
+\end_layout
+
+\end_inset
+
+をご参照ください。これにより、一般ユーザアカウントの
+\shape italic
+USERNAME
+\shape default
+が作成され、/home下に/home/
+\shape italic
+USERNAME
+\shape default
+というディレクトリが作成されます。この/home/
+\shape italic
+USERNAME
+\shape default
+というディレクトリが、
+\shape italic
+USERNAME
+\shape default
+というユーザのホームディレクトリ
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+デスクトップと同義。
+\end_layout
+
+\end_inset
+
+となります。
+\end_layout
+
+\begin_layout Standard
+アカウントを作成したら、次にアカウントのパスワードを設定します。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# passwd 
+\shape italic
+USERNAME
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩き、
+\shape italic
+USERNAME
+\shape default
+に対するパスワードを決定します。パスワードの設定手順は第
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Arch-Linuxのインストール"
+
+\end_inset
+
+章でrootアカウントのパスワードを設定した際と同様になります。
+\end_layout
+
+\begin_layout Standard
+パスワードを設定したら、危険極まるスーパーユーザのアカウントから離脱しましょう。
+\family typewriter
+exit
+\family default
+を用いてシステムからログアウトし、新たに作成した一般ユーザのアカウントで再ログインします。
+\end_layout
+
+\begin_layout Standard
+ここで、シェルの表示が
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+[
+\shape italic
+USERNAME
+\shape default
+@
+\shape italic
+HOSTNAME
+\shape default
+ ~]$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+となっていることに注目しましょう。この表示のうち、``
+\family typewriter
+~
+\family default
+''は今自分がユーザのホームディレクトリ、即ち/home/
+\shape italic
+USERNAME
+\shape default
+にいることを意味しています。また、シェルのプロンプトが``
+\family typewriter
+#
+\family default
+''から``
+\family typewriter
+$
+\family default
+''に変化しています。これは、現在システムへログインしているユーザがスーパーユーザ(
+\family typewriter
+#
+\family default
+で表される）から一般ユーザ（
+\family typewriter
+$
+\family default
+で表される）に変わったためです。ここで、試しに指定したディレクトリへ移動する
+\family typewriter
+cd
+\family default
+を用いて``/''へ移動してみましょう。すると
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+[
+\shape italic
+USERNAME
+\shape default
+@
+\shape italic
+HOSTNAME
+\shape default
+ /]$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+というように表示が変化するはずです。このように、シェル上では今自分がどのディレクトリにいるかがすぐにわかるようになっています。ちなみにホームディレクトリへ戻るに
+は、
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ cd ~
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+または
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ cd
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩きます。
+\end_layout
+
+\begin_layout Standard
+以下では、スーパーユーザの権限（管理者権限ともいう）が必要な操作の場合はプロンプトを``
+\family typewriter
+#
+\family default
+''、それ以外の場合はプロンプトを``
+\family typewriter
+$
+\family default
+''とすることで表現します。
+\end_layout
+
+\begin_layout Subsection
+ユーザをグループに追加する
+\end_layout
+
+\begin_layout Standard
+前節で扱ったとおり、追加した一般ユーザに
+\family typewriter
+sudo
+\family default
+を有効化するためには、ユーザをwheelグループへ追加することが必要です。加えて、GUIを使用する等グラフィック関連のデバイスを操作するためにはユーザをvide
+oグループへ追加する必要がありますし、スピーカから音を鳴らす等の音声関連のデバイスを操作するためにもユーザをaudioグループへ追加する必要があります。グループ
+というのは、特定の権限を許可された集合であると解釈するのが適当でしょう。
+\end_layout
+
+\begin_layout Standard
+では早速ユーザをグループへ追加していきます。これには
+\family typewriter
+gpasswd
+\family default
+というコマンドを用います。ユーザをグループへ追加するという行為はシステム全体へ影響を及ぼすため、一般ユーザでの行使は許可されません。現状は
+\family typewriter
+sudo
+\family default
+を利用できない一般ユーザという身分ですので、
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ su
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩くことでスーパーユーザへ移行することにします。ここで要求されるパスワードはスーパーユーザのパスワードです。
+\end_layout
+
+\begin_layout Standard
+ユーザをグループへ追加するには以下のように叩きます。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# gpasswd -a 
+\shape italic
+USERNAME GROUP_NAME
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+これは
+\shape italic
+USERNAME
+\shape default
+というユーザを
+\shape italic
+GROUP_NAME
+\shape default
+という名前のグループへ追加(``
+\family typewriter
+-a
+\family default
+'')することを意味しています。このようにして、wheel、video、audioグループへユーザを追加しましょう。
+\end_layout
+
+\begin_layout Standard
+ユーザのグループへの追加は再ログイン後に有効になります。ここまでの操作を完了したあとは
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# exit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩き、ログアウト後、再び一般ユーザとしてログインしましょう。
+\end_layout
+
+\begin_layout Section
+GUIの導入
+\end_layout
+
+\begin_layout Standard
+今後は一般ユーザでシステムにログインしていることを前提にして説明を進めます。具体的にはスーパーユーザ権限を必要とするコマンドには
+\family typewriter
+sudo
+\family default
+をコマンドの先頭に用いることで示します。これが
+\family typewriter
+sudo
+\family default
+の使用方法です。
+\end_layout
+
+\begin_layout Standard
+さて、GUIには通常X window system（以下X）というソフトウェアを使います。XはGUIを提供するソフトウェアです
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+詳しく言えばXはソフトウェアの名称ではなく通信プロトコルの名称である。GUIはXという通信プロトコルを用いて提供される、と表記するのが正しい（詳細は
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://ja.wikipedia.org/wiki/X_Window_System
+\end_layout
+
+\end_inset
+
+を参照）。
+\end_layout
+
+\end_inset
+
+。以後、XのインストールによってGUIの基礎を構築し、X上で動作するメジャーなデスクトップ環境のひとつであるXfceをインストールすることで、馴染み深いGUI環
+境を構築することを目指します。
+\end_layout
+
+\begin_layout Subsection
+Xの導入
+\end_layout
+
+\begin_layout Standard
+Arch LinuxでXを動作させるには、最低限以下のコマンドを叩いてインストールされるパッケージが必要です。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ sudo pacman -S xorg-server xorg-server-utils xorg-xinit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Xの動作確認には、加えて以下で得られるパッケージが必要になります。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ sudo pacman -S xorg-twm xterm xorg-xclock
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+続いてグラフィックスドライバをインストールします。GUIを使用するにはコンピュータのグラフィックス機能を利用します。そのためには当然グラフィックドライバが必要に
+なります。VirtualBox Extension Packをインストールしてあれば、vesaというオープンソースの汎用グラフィックドライバを導入することで対応
+できます。Arch Linuxでは以下のように叩いてインストールします。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ sudo pacman -S xf86-video-vesa
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+これでXを動作させる環境が一応整ったはずです。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ startx
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩き、図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "startx"
+
+\end_inset
+
+のような出力になるかを確認します。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_ArchLinux/startx.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+startx
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "startx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+GUIにおけるキーマップの再設定
+\end_layout
+
+\begin_layout Standard
+第
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Arch-Linuxのインストール"
+
+\end_inset
+
+章でも触れた通り、CUIで設定したキー配列はGUIでは有効にならないことがあります。GUIにおいても適切なキー配列を設定する必要があるでしょう。ここではシステム
+再起動まで有効である一時的な設定と、永続的に有効である設定との2つを紹介します。
+\end_layout
+
+\begin_layout Subsubsection
+一時的な設定
+\end_layout
+
+\begin_layout Standard
+とりあえず一時的でいいからキー配列を変えたいという場合、
+\family typewriter
+setxkbmap
+\family default
+というコマンドを用いることができます。例えはキー配列をJIS配列にしたい場合、引数に``jp''を指定して、
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ setxkbmap jp
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+とすると良いでしょう。
+\end_layout
+
+\begin_layout Subsubsection
+永続的な設定
+\end_layout
+
+\begin_layout Standard
+キー配列の変更を明示的に変更するには、Xの設定ファイルを編集する必要があります。Xの設定ファイルの場所は、概ね/etc/X11/xorg.conf.dです。ここを
+\family typewriter
+ls
+\family default
+で確認すると、例えば10-evdev.confや10-quirks.confといった名前のファイルがあると思います。ここに置かれる設定ファイルは、名前が``<数値>
+-<名前>.conf''という命名規則に従うことを要求されます。このうち名前は適当でいいのですが、数値に関しては、既存のファイルに振られた数値よりさほど差がない値
+が良いでしょう。上の例であれば例えば20や30などが適当です。
+\end_layout
+
+\begin_layout Standard
+さて、ここでは設定ファイルを``20-jpkbdmap.conf''として作成することにしましょう。名前は明快に``JaPanese KeyBoarD
+ MAPping''です。ここに、
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+tt
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabbing}
+\end_layout
+
+\begin_layout Plain Layout
+
+12345
+\backslash
+=6789012345678901 
+\backslash
+kill
+\end_layout
+
+\begin_layout Plain Layout
+
+Section "InputClass" 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	 
+\backslash
+>Identifier "Keyboard Deults" 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	 
+\backslash
+>MatchIsKeyboard "yes" 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	 
+\backslash
+>Option "XkbLayout" "jp" 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	 
+\backslash
+>Option "XkbModel" "jp106" 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+EndSection
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabbing}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と記述します。GUIを再起動すれば、設定は有効になるはずです。
+\end_layout
+
+\begin_layout Subsection
+Xfceのインストール
+\end_layout
+
+\begin_layout Standard
+Xfce
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.xfce.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+とは、前述したようにデスクトップ環境と呼ばれる、GUIを提供するソフトウェアです。XもGUIを提供するソフトウェアだと説明しましたが、例えるならXはコンクリート
+打ちっぱなしの内壁で、デスクトップ環境は断熱材や遮音材などを挟んで内装を整え、壁紙を貼った内壁のようなものです。すなわちXはGUIの基礎を構築し、Xの構築したG
+UIを用いて、デスクトップ環境はGUIを提供するのです。
+\end_layout
+
+\begin_layout Standard
+Xfceをインストールするには、以下のように叩きます。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ sudo pacman -S xfce4 xfce4-goodies
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+LightDMのインストール
+\end_layout
+
+\begin_layout Standard
+LightDM
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.freedesktop.org/wiki/Software/LightDM/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+とは、軽量なログインマネージャです。ログインマネージャとはシステムへログインするインターフェースのGUI版で、機能はCUIのログインインターフェースとそれほど変
+わるものではありません。ですが、ログインマネージャを導入した場合、マシンの電源を投入するとデスクトップ環境の起動に至るまでにコマンドを叩いたりする操作が不要にな
+るので、使い勝手が少々よくなるという利点があります。
+\end_layout
+
+\begin_layout Standard
+LightDMのインストールには、以下を叩きます。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ sudo pacman -S lightdm lightdm-gtk3-greeter xorg-server-xephyr
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+インストール後、
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ sudo systemctl enable lightdm.service
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩き、システム起動時にLightDMが起動するよう設定します。設定後、システムを再起動させれば、少々みすぼらしいですが、GUI上でログインが可能になっているは
+ずです。
+\end_layout
+
+\begin_layout Subsection
+Xfceの設定
+\end_layout
+
+\begin_layout Standard
+では早速Xfceを設定していきましょう。今回は本ゼミの目標である「ブラウザでgoogleを開いて日本語で検索ワードを入力して検索する」を達成する上で触れなければ
+ならない事柄について扱うにとどめます。他に必要があれば、本章末尾の補足で扱いたいと思います。
+\end_layout
+
+\begin_layout Standard
+ちなみに、XfceでCUIによるコマンド操作を行うには、Xfce上でシェルを使用する必要が有ります。Alt+F2を入力してランチャを起動し、
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+xfce4-terminal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+とすることで、馴染み深いCUIが立ち上がります。ここでプログラムの起動に使用したのはシェルではなくランチャでありますので、上の操作においてプロンプトが表示されな
+い事に注意して下さい。
+\end_layout
+
+\begin_layout Subsubsection
+ロケールの再設定
+\end_layout
+
+\begin_layout Standard
+第
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Arch-Linuxのインストール"
+
+\end_inset
+
+章で、CUIでのロケールは英語、GUIのロケールは日本語と個別に設定する、と述べましたが、どうもXfceではこのような設定は不可能なようです
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+筆者が普段使用しているKDEでは可能。理由がわからない。
+\end_layout
+
+\end_inset
+
+。予想外の事態なのですが、思い悩んでも埒が明かないので、おとなしく/etc/locale.confを再設定しましょう。内容を``LANG=
+\begin_inset Quotes erd
+\end_inset
+
+ja_JP.UTF-8
+\begin_inset Quotes erd
+\end_inset
+
+''に修正し、再起動します。ちなみに単純に
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ nano /etc/locale.conf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+とすると、/etc/locale.confを編集できません。というのも、Linux上の全てのファイルにはファイルの管理者とパーミッションが定められており、基本的に
+システムの設定ファイルはスーパーユーザが管理者となっています。加えて設定ファイルのパーミッションは、スーパーユーザに対してのみ書き込みが可能となっているので、一
+般ユーザが設定ファイルを編集する場合は
+\family typewriter
+sudo
+\family default
+を用いなければなりません。
+\end_layout
+
+\begin_layout Standard
+再起動後、システムは見事に日本語化されていると思います。
+\end_layout
+
+\begin_layout Subsubsection
+UimとMozcの導入
+\end_layout
+
+\begin_layout Standard
+次に日本語を入力するためのIM
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Input Method。文字通り多言語を「入力する手段」である。
+\end_layout
+
+\end_inset
+
+であるUim
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://code.google.com/p/uim/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+と、おそらく現在オープンソースのIME
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Input Method Engine。言語を入力するためにIM中で駆動させるプログラム。
+\end_layout
+
+\end_inset
+
+の中で最も性能の良いと思われるMozc
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://code.google.com/p/mozc/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+をインストールします。
+\end_layout
+
+\begin_layout Standard
+これには以下を叩きます。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ sudo pacman -S uim uim-mozc mozc
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+インストール後、UimでMozcを使用するための設定を行います。まずCUI上で
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ sudo uim-module-manager --register mozc
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩き、UimにMozcを登録します。続いて
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ uim-pref-gtk
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+を叩き、UIMの設定ウィンドウを呼び出します。次に、「全体設定」中の「入力方式の利用準備」内にある「標準の入力方式を指定する」にチェックを入れ、「標準の入力方式
+」のプルダウンメニューからMozcを選択します。
+\end_layout
+
+\begin_layout Standard
+続いて、Uimがシステム起動時
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+正確にはデスクトップ環境の起動時。
+\end_layout
+
+\end_inset
+
+に自動的に立ち上がるように設定します。/home/
+\shape italic
+USERNAME
+\shape default
+/.xprofile（~/.xprofileと同義）の末尾に以下を追記します。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+export GTK_IM_MODULE='uim' 
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+export QT_IM_MODULE='uim' 
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+uim-xim & 
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+export XMODIFIERS='@im=uim'
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+uim-toolbar-gtk-systray &
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ただし、初期状態では恐らく当該ファイルはディレクトリ上に存在しないので、
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ nano ~/.xprofile
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+として、.xprofileを作成する必要があります。この方法でファイルを作成すると実際にファイルへの変更を保存するまでファイル自体は作成されないことに注意して下さ
+い。なお、.xprofileのようにファイルの先頭に``.''（ドット）がつくファイルは隠しファイルと呼ばれるもので、通常の手段（単に
+\family typewriter
+ls
+\family default
+と叩くなど）では表示されません。隠しファイルを表示させる場合、
+\family typewriter
+ls
+\family default
+では
+\family typewriter
+-a
+\family default
+オプションを付けます。GUI上のファイラではファイラの操作方法に依存するので一概に言えません。
+\end_layout
+
+\begin_layout Standard
+追記後、システムを再起動させれば、日本語入力が可能となっているはずです。日本語入力の入切は全角/半角キーで、Uim自体の入切はAlt+Spaceで可能です。キー
+バインドは任意で変更可能ですから、設定を使いやすいように変更するのも良いでしょう。
+\end_layout
+
+\begin_layout Subsubsection
+ブラウザの導入
+\end_layout
+
+\begin_layout Standard
+最後にブラウザの導入です。ブラウザにはMidori
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.midori-browser.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+を使用します。Midoriは
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ sudo pacman -S midori
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+とすることでインストールができます。
+\end_layout
+
+\begin_layout Standard
+ブラウザの起動方法は、デスクトップ右上の「アプリケーションメニュー」から「インターネット」を選択し起動するのも良いですが、
+\family typewriter
+xfce4-terminal
+\family default
+を起動したようにAlf+F2を入力した後
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+midori
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩いても起動することができます。
+\end_layout
+
+\begin_layout Standard
+では、いよいよ本ゼミの最終目標である、「ブラウザでgoogleを開いて日本語で検索ワードを入力して検索する」を実践したいと思います。とはいっても普段皆さんが普段
+使用しているブラウザで行っているのと同様に、ブラウザのアドレスバーに
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.google.com
+\end_layout
+
+\end_inset
+
+と入力し、表示されるgoogleの検索ボックスに適当な検索ワードを入力し、Enterを押下するだけです。これで、Arch Linux上に構築したGUIにおいてブ
+ラウザを起動し、ブラウザでgoogleにアクセスし、googleの検索ボックスに日本語で検索ワードを入力し、検索を行う、という本ゼミの目標を達成することが出来ま
+した。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figs/Fig_ArchLinux/finished.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+やっと終わった。
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Finally_Finished"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+補足
+\end_layout
+
+\begin_layout Standard
+ここではArch Linuxを常用する上で知っておくべきであろう事柄について、簡単に触れていきたいと思います。
+\end_layout
+
+\begin_layout Standard
+この節では説明を簡略化する代わりに、各項目に対応したArchWikiのURLを添えておきます。興味をお持ちになった際は、ArchWikiの当該項目で詳細をご覧く
+ださい。
+\end_layout
+
+\begin_layout Subsection
+AURの利用
+\begin_inset Newline newline
+\end_inset
+
+(
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.archlinux.org/index.php/AUR
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+Arch Linuxには、Arch Linux本家が管理運用するレポジトリの他に、Arch Linuxのユーザがパッケージを作成するためのファイル(PKGBUI
+LD)を投稿するAUR(Arch User Repository)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://aur.archlinux.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+というものがあります。ここには主にライセンスの都合上本家のレポジトリには登録できないパッケージや、本家に登録されているパッケージの不安定版、あるいは既存のパッケ
+ージに機能を追加するためのパッケージであったり、ジョークプログラムを収めたパッケージであったりと、多種多様なパッケージが登録されています。この多種多様というワー
+ドが示す通り、使用したいと思ったパッケージが公式レポジトリになくても、AURを探せば大抵見つかるという便利さも兼ね揃えています。
+\end_layout
+
+\begin_layout Standard
+このAURですが、残念ながら
+\family typewriter
+pacman
+\family default
+から直接では利用することができません。利用する場合、AURにアクセスし、インストールしたいパッケージを探し、そのパッケージを作成するためのPKGBUILDが含ま
+れた圧縮ファイルを入手し、解凍、パッケージ作成、インストールという手順を踏まなければなりません。
+\end_layout
+
+\begin_layout Standard
+ですが、
+\family typewriter
+pacaur
+\family default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.archlinux.org/index.php/Pacaur
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+という
+\family typewriter
+pacman
+\family default
+のラッパプログラムを用いれば、
+\family typewriter
+pacman
+\family default
+と同じような使い方でAURにアクセス、PKGBUILDをダウンロードすることができます。
+\end_layout
+
+\begin_layout Standard
+ところで、おそらく図
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Finally_Finished"
+
+\end_inset
+
+はあなたが構築したデスクトップ環境に比べ、フォントが綺麗なものになっていると思います。AURにはこのようなフォントデータも大量に転がっており、わざわざインターネ
+ット上からフォントを探し出してインストールしなくても、シェル上でコマンドを叩くだけで導入が可能なのです。
+\end_layout
+
+\begin_layout Subsection
+ネットワーク接続の管理
+\begin_inset Newline newline
+\end_inset
+
+(
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.archlinux.org/index.php/Network_Configuration
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+実機へのArch Linuxを行った場合、特にノートパソコンなどではインターネットへの接続に無線接続を用いることが多いと思います。そのような場合などの汎用性を鑑
+みて、補足としてwicd
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://wicd.sourceforge.net/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+というネットワーク接続管理ソフトウェアのインストールを扱います。この操作は必ずしも必須ではありません。
+\end_layout
+
+\begin_layout Standard
+まず以下のように叩き、wicdとwicdの動作に必要なパッケージをインストールします
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ pacman -S wicd
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+インストールが終了したら、次に以下のように叩き、wicdデーモンを有効化します。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# systemctl enable wicd.service
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+最後に、wicd以外のネットワークデーモンを停止、無効化します。これはwicd以外のネットワークデーモンが動作している場合、wicdの動作に支障を来すおそれがあ
+るためです。この操作と上の操作は、環境によって前後する場合があります。適宜調整してください。具体的にはこの文書の順序に従ってエラーが発生した場合、順番を入れ替え
+て実行してください。
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+# systemctl stop dhcpcd.service
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+# systemctl stop netctl.service
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+# systemctl disable dhcpcd.service
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+# systemctl disable netctl.service
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+これで使用準備は完了です。実際に使用可能になるのはインストール完了後に再起動した後になります。
+\end_layout
+
+\begin_layout Standard
+wicdをCUIで使用する場合は
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ wicd-curses
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩くとインターフェースが起動します。GUIで使用する場合は、例えば今回のようにXfceなどのGTK系のツールキットを使用しているデスクトップ環境の場合は、
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ sudo pacman -S wicd-gtk
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩き、
+\family typewriter
+wicd-gtk
+\family default
+を使用すると良いでしょう。
+\end_layout
+
+\begin_layout Standard
+無線接続などの詳細な設定は扱いません。
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.archlinux.org/index.php/Wireless_Setup
+\end_layout
+
+\end_inset
+
+を参照するのが手っ取り早いでしょう。wicdについては
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.archlinux.org/index.php/Wicd
+\end_layout
+
+\end_inset
+
+が役立ちます。
+\end_layout
+
+\begin_layout Subsection
+音を鳴らす
+\begin_inset Newline newline
+\end_inset
+
+(
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.archlinux.org/index.php/Sound
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+Arch Linux上でサウンドシステムを扱うには、ALSA
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.alsa-project.org/main/index.php/Main_Page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+とOSS
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.opensound.com/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+の2種類の手段があります。通常はLinuxカーネルの構成部品の一つであるALSAを使用するのが良いでしょう。ここではALSAについて触れます。
+\end_layout
+
+\begin_layout Standard
+ALSAを使用するには、
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ sudo pacman -S alsa-utils
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+と叩いてALSAを触るためのユーティリティをインストールし、
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "60text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+$ alsamixer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+を叩きます。CUIで表示されるミキサー画面を適当に弄くり回せば十分でしょう。デフォルトでは全てのパラメータがミュートされていますが、Mキーによりミュートをオン・
+オフできます。
+\end_layout
+
+\begin_layout Standard
+ALSAについては
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture
+\end_layout
+
+\end_inset
+
+を、OSSに関しては
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.archlinux.org/index.php/Open_Sound_System
+\end_layout
+
+\end_inset
+
+を参照すると良いでしょう。
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "1"
+key "LSP"
+
+\end_inset
+
+Robert Love 著, 千住治郎 訳, 『LINUXシステムプログラミング』（オライリー・ジャパン, 2011）
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "2"
+key "OS"
+
+\end_inset
+
+Abraham Silberschatz, Peter Baer Galvin, Greg Gagne,``Operating System Concepts
+ 9th Edition''(John Wiley & Sons, Inc., 2013)
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "3"
+key "LST"
+
+\end_inset
+
+岡田健治, 川井義治, 宮原徹, 佐久間伸夫, 遠山洋平, 田口貴久, 松田神一, 木村真之介, 高橋征義, 『Linux標準教科書(ver2.0.0)』（LPI-
+-Japan, 2012）
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.lpi.or.jp/linuxtext/text.shtml
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "4"
+key "ALBG"
+
+\end_inset
+
+『Beginners' Guide - ArchWiki』
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.archlinux.org/index.php/Beginners'_Guide
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "5"
+key "ALIG"
+
+\end_inset
+
+『Installation Guide - ArchWiki』
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.archlinux.org/index.php/Installation_Guide
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "6"
+key "AL"
+
+\end_inset
+
+『Arch Linux - ArchWiki』
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.archlinux.org/index.php/Arch_Linux
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "7"
+key "LINUX"
+
+\end_inset
+
+『Linux - Wikipedia』
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://ja.wikipedia.org/wiki/Linux
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "8"
+key "UNIX"
+
+\end_inset
+
+『UNIX - Wikipedia』
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://ja.wikipedia.org/wiki/UNIX
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "9"
+key "HOL"
+
+\end_inset
+
+『History of Linux - Wikipedia, the free encyclopedia』
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://en.wikipedia.org/wiki/History_of_Linux
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "10"
+key "ALK"
+
+\end_inset
+
+『About Linux Kernel』
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.kernel.org/linux.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "11"
+key "GNU"
+
+\end_inset
+
+『GNU - Wikipedia』
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://ja.wikipedia.org/wiki/GNU
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "12"
+key "GOS"
+
+\end_inset
+
+『GNUオペレーティング・システムについて - GNUプロジェクト - フリーソフトウェアファウンデーション』
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.gnu.org/gnu/about-gnu.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "13"
+key "DoFS"
+
+\end_inset
+
+『自由ソフトウェアとは? - GNUプロジェクト - フリーソフトウェアファウンデーション』
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.gnu.org/philosophy/free-sw.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "14"
+key "BSD"
+
+\end_inset
+
+『BSD - Wikipedia』
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://ja.wikipedia.org/wiki/BSD
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "15"
+key "MINIX"
+
+\end_inset
+
+『Minix - Wikipedia』
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://ja.wikipedia.org/wiki/Minix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "16"
+key "LD"
+
+\end_inset
+
+『Linux distribution - Wikipedia, the free encyclopedia』
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://en.wikipedia.org/wiki/Linux_distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "17"
+key "FHS"
+
+\end_inset
+
+『Filesystem Hierarchy Standard』
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.pathname.com/fhs/pub/fhs-2.3.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "18"
+key "AFH"
+
+\end_inset
+
+『Arch filesystem hierarchy - ArchWiki』
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.archlinux.org/index.php/Arch_filesystem_hierarchy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "18"
+key "AP"
+
+\end_inset
+
+『Partitioning - ArchWiki』
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.archlinux.org/index.php/partitioning
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "19"
+key "An"
+
+\end_inset
+
+『netctl - ArchWiki』
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.archlinux.org/index.php/netctl
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
